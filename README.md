@@ -27,7 +27,7 @@ Works especially well in Kitty, Cool Retro Term, and other terminals that enjoy 
 - A CJK font (e.g. Noto CJK or IPA fonts)
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/kanji-splash.git
+git clone https://github.com/zenzenzo/kanji-splash.git
 cd kanji-splash
 
 # dependency

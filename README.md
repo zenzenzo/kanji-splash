@@ -21,9 +21,13 @@ Works especially well in Kitty, Cool Retro Term, and other terminals that enjoy 
 ## Install
 
 Quick install (Linux):
+
 git clone https://github.com/zenzenzo/kanji-splash.git && cd kanji-splash
+
 sudo apt install python3-pil fonts-noto-cjk
+
 mkdir -p ~/.local/bin && ln -sfn "$(pwd)/kanji_splash.py" ~/.local/bin/kanji-splash && ln -sfn "$(pwd)/kanji-new" ~/.local/bin/kanji-new
+
 Then run: kanji-splash
 
 **Requirements**

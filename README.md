@@ -170,8 +170,12 @@ The list is **haiku-first**: classic verses, then characters drawn from those li
 - `color` / `effect`: one of the known names, or `null` for random  
 - Then: `kanji-splash dream` or `kanji-splash -c 夢`
 
+## Credits
+
+Built with **[Grok](https://grok.com)** (xAI) doing all of the coding — from the splash renderer and animations to the haiku database and install docs.
+
+Haiku are classical Japanese works (public domain). English translations are provided for convenience; improve them if you like.
+
 ## License
 
 MIT — free to use, modify, and repurpose. See [LICENSE](LICENSE).
-
-Haiku are classical Japanese works (public domain). English translations are provided for convenience; improve them if you like.

@@ -859,8 +859,8 @@
       "mountain",
       "mount"
     ],
-    "color": "green",
-    "effect": "grass"
+    "color": "pastel-orange",
+    "effect": "sunrays"
   },
   {
     "char": "路",
@@ -890,8 +890,8 @@
       "road",
       "route"
     ],
-    "color": null,
-    "effect": null
+    "color": "pastel-yellow",
+    "effect": "sunrays"
   },
   {
     "char": "桜",
@@ -2571,8 +2571,8 @@
       "sleep",
       "rest"
     ],
-    "color": null,
-    "effect": null
+    "color": "purple",
+    "effect": "starlight"
   },
   {
     "char": "渡",
@@ -3773,8 +3773,8 @@
       "author": "小林一茶",
       "author_en": "Kobayashi Issa"
     },
-    "color": null,
-    "effect": null
+    "color": "pastel-red",
+    "effect": "sakura"
   },
   {
     "char": "町",
@@ -4435,7 +4435,7 @@
       "author": "小林一茶",
       "author_en": "Kobayashi Issa"
     },
-    "color": "pastel-green",
+    "color": "orange",
     "effect": "grass"
   },
   {

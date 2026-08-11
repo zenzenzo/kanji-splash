@@ -1,4 +1,13 @@
 #!/usr/bin/env bash
 # Pick a random kanji and show the splash screen.
-# Extra args are forwarded (e.g. kanji-new -s sakura --no-animate).
-exec kanji-splash -m random "$@"
+# Extra args are forwarded (e.g. kanji-new --effect sakura).
+set -euo pipefail
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+if command -v kanji-splash >/dev/null 2>&1; then
+  exec kanji-splash -m random "$@"
+elif [[ -x "$DIR/kanji_splash.py" ]]; then
+  exec "$DIR/kanji_splash.py" -m random "$@"
+else
+  echo "kanji-splash not found. Install a symlink or run ./kanji_splash.py" >&2
+  exit 1
+fi

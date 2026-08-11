@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Kanji terminal start screen — ASCII art glyph + meaning + example words."""
+"""Kanji terminal start screen — ASCII art, haiku, keyword lookup, animations."""
 
 from __future__ import annotations
 
@@ -407,6 +407,12 @@ def load_font(size: int) -> ImageFont.FreeTypeFont:
     return ImageFont.load_default()
 
 
+# Terminal block cells (░█ etc.) are typically ~2× taller than wide.
+# We sample a near-square bitmap, then repeat each cell horizontally so the
+# on-screen kanji isn't squashed.
+CELL_ASPECT = 2
+
+
 def kanji_to_ascii(
     char: str,
     *,
@@ -414,19 +420,31 @@ def kanji_to_ascii(
     rows: int | None = None,
     ramp_name: str = "blocks",
     invert: bool = False,
+    cell_aspect: int = CELL_ASPECT,
 ) -> list[str]:
-    """Render a single kanji glyph into ASCII/block-art lines."""
+    """
+    Render a single kanji glyph into ASCII/block-art lines.
+
+    ``cols`` is the target width in *terminal columns* (after horizontal
+    expansion). Each sample cell is repeated ``cell_aspect`` times so that
+    tall monospace glyphs (░█) still look proportionally square.
+    """
+    cell_aspect = max(1, int(cell_aspect))
+    # Logical sample resolution (square-ish in “pixels”)
+    sample_cols = max(10, cols // cell_aspect)
     if rows is None:
-        # Monospace cells are taller than wide; bias height a bit lower
-        rows = max(12, int(cols * 0.55))
+        # Equal sample rows/cols → after ×cell_aspect expansion, on-screen
+        # aspect ≈ square when cells are ~cell_aspect tall for every 1 wide.
+        rows = sample_cols
+    rows = max(10, rows)
 
     ramp = RAMPS.get(ramp_name, RAMPS["blocks"])
     if invert:
         ramp = ramp[::-1]
 
-    # Render large, then sample down for smoother edges
+    # Render large with square pixels, then sample down
     scale = 4
-    img_w, img_h = cols * scale, rows * scale
+    img_w, img_h = sample_cols * scale, rows * scale
     img = Image.new("L", (img_w, img_h), color=0)
     draw = ImageDraw.Draw(img)
 
@@ -441,18 +459,19 @@ def kanji_to_ascii(
     y = (img_h - th) // 2 - bbox[1]
     draw.text((x, y), char, fill=255, font=font)
 
-    # Optional slight blur-like downscale (box filter via resize)
-    small = img.resize((cols, rows), Image.Resampling.LANCZOS)
+    small = img.resize((sample_cols, rows), Image.Resampling.LANCZOS)
 
     lines: list[str] = []
     pixels = small.load()
     n = len(ramp) - 1
     for y in range(rows):
-        row_chars = []
-        for x in range(cols):
+        row_chars: list[str] = []
+        for x in range(sample_cols):
             v = pixels[x, y] / 255.0
             idx = int(round(v * n))
-            row_chars.append(ramp[idx])
+            ch = ramp[idx]
+            # Stretch horizontally to compensate for tall terminal cells
+            row_chars.append(ch * cell_aspect)
         lines.append("".join(row_chars))
     return lines
 
@@ -2253,40 +2272,6 @@ def list_entries(entries: list[dict]) -> None:
     print(C.paint(f"  {shortcuts_footer()}", C.DIM))
 
 
-def render_static_panel(
-    entry: dict,
-    *,
-    style: str,
-    ramp: str,
-    ramp_name: str,
-    invert: bool,
-    width: int,
-    hue_direction: float,
-) -> tuple[list[str], str]:
-    """Build art + panel string for a single entry (no animation)."""
-    tw = term_width()
-    cols = width if width > 0 else max(28, min(48, tw - 8))
-    art = kanji_to_ascii(
-        entry["char"],
-        cols=cols,
-        ramp_name=ramp_name,
-        invert=invert,
-    )
-    art = strip_empty_rows(art)
-    canvas = pad_art(art, top=4, bottom=1, left=2, right=2)
-    panel = build_panel(
-        entry,
-        canvas,
-        style=style,
-        ramp=ramp,
-        hue_shift=hue_direction * HUE_AMPLITUDE if C.enabled else 0.0,
-        fade=1.0,
-        show_details=True,
-        noise=0.0,
-    )
-    return art, panel
-
-
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         description=(
@@ -2383,8 +2368,9 @@ def main(argv: list[str] | None = None) -> int:
         choices=EFFECTS,
         default=DEFAULT_EFFECT,
         help=(
-            f"Animation effect: {', '.join(EFFECTS)} "
-            f"(default: {DEFAULT_EFFECT}). Toggle live with key '{KEY_FX}'."
+            f"Force animation: {', '.join(EFFECTS)}. "
+            f"Default: per-kanji effect from data (or random if abstract). "
+            f"Toggle live with key '{KEY_FX}'."
         ),
     )
     parser.add_argument(

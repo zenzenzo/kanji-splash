@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Pick a random kanji and show the splash screen.
+# Extra args are forwarded (e.g. kanji-new -s sakura --no-animate).
+exec kanji-splash -m random "$@"

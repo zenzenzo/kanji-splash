@@ -1,0 +1,4505 @@
+[
+  {
+    "char": "池",
+    "readings": {
+      "on": [
+        "チ"
+      ],
+      "kun": [
+        "いけ"
+      ]
+    },
+    "meaning": "pond, pool; still water held in a hollow",
+    "haiku": {
+      "lines": [
+        "古池や",
+        "蛙飛び込む",
+        "水の音"
+      ],
+      "reading": "ふるいけや かわずとびこむ みずのおと",
+      "translation": "An old pond — / a frog jumps in, / the sound of water",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "pond",
+    "keywords": [
+      "pond",
+      "pool"
+    ],
+    "color": "blue",
+    "effect": "starlight"
+  },
+  {
+    "char": "水",
+    "readings": {
+      "on": [
+        "スイ"
+      ],
+      "kun": [
+        "みず"
+      ]
+    },
+    "meaning": "water; fluidity, purity, one of the classical elements",
+    "haiku": {
+      "lines": [
+        "古池や",
+        "蛙飛び込む",
+        "水の音"
+      ],
+      "reading": "ふるいけや かわずとびこむ みずのおと",
+      "translation": "An old pond — / a frog jumps in, / the sound of water",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "water",
+    "keywords": [
+      "water",
+      "aqua"
+    ],
+    "color": "blue",
+    "effect": "starlight"
+  },
+  {
+    "char": "音",
+    "readings": {
+      "on": [
+        "オン",
+        "イン"
+      ],
+      "kun": [
+        "おと",
+        "ね"
+      ]
+    },
+    "meaning": "sound, noise; a note that breaks silence",
+    "haiku": {
+      "lines": [
+        "古池や",
+        "蛙飛び込む",
+        "水の音"
+      ],
+      "reading": "ふるいけや かわずとびこむ みずのおと",
+      "translation": "An old pond — / a frog jumps in, / the sound of water",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "sound",
+    "keywords": [
+      "sound",
+      "noise"
+    ],
+    "color": null,
+    "effect": null
+  },
+  {
+    "char": "蛙",
+    "readings": {
+      "on": [
+        "ア"
+      ],
+      "kun": [
+        "かえる",
+        "かわず"
+      ]
+    },
+    "meaning": "frog; a classic spring kigo in haiku",
+    "haiku": {
+      "lines": [
+        "古池や",
+        "蛙飛び込む",
+        "水の音"
+      ],
+      "reading": "ふるいけや かわずとびこむ みずのおと",
+      "translation": "An old pond — / a frog jumps in, / the sound of water",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "frog",
+    "keywords": [
+      "frog",
+      "kaeru"
+    ],
+    "color": "green",
+    "effect": "grass"
+  },
+  {
+    "char": "夏",
+    "readings": {
+      "on": [
+        "カ",
+        "ゲ"
+      ],
+      "kun": [
+        "なつ"
+      ]
+    },
+    "meaning": "summer; heat, fullness, high season",
+    "haiku": {
+      "lines": [
+        "夏草や",
+        "兵どもが",
+        "夢の跡"
+      ],
+      "reading": "なつくさや つわものどもが ゆめのあと",
+      "translation": "Summer grasses — / all that remains / of warriors' dreams",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "summer",
+    "keywords": [
+      "summer",
+      "summertime"
+    ],
+    "color": "orange",
+    "effect": "sunrays"
+  },
+  {
+    "char": "草",
+    "readings": {
+      "on": [
+        "ソウ"
+      ],
+      "kun": [
+        "くさ"
+      ]
+    },
+    "meaning": "grass, herb; the green that reclaims old ground",
+    "haiku": {
+      "lines": [
+        "夏草や",
+        "兵どもが",
+        "夢の跡"
+      ],
+      "reading": "なつくさや つわものどもが ゆめのあと",
+      "translation": "Summer grasses — / all that remains / of warriors' dreams",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "grass",
+    "keywords": [
+      "grass"
+    ],
+    "color": "green",
+    "effect": "grass"
+  },
+  {
+    "char": "兵",
+    "readings": {
+      "on": [
+        "ヘイ",
+        "ヒョウ"
+      ],
+      "kun": [
+        "つわもの",
+        "いくさ"
+      ]
+    },
+    "meaning": "soldier, warrior; one who serves in battle",
+    "haiku": {
+      "lines": [
+        "夏草や",
+        "兵どもが",
+        "夢の跡"
+      ],
+      "reading": "なつくさや つわものどもが ゆめのあと",
+      "translation": "Summer grasses — / all that remains / of warriors' dreams",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "warrior",
+    "keywords": [
+      "warrior",
+      "soldier"
+    ],
+    "color": "red",
+    "effect": "embers"
+  },
+  {
+    "char": "夢",
+    "readings": {
+      "on": [
+        "ム",
+        "ボウ"
+      ],
+      "kun": [
+        "ゆめ"
+      ]
+    },
+    "meaning": "dream; sleep-visions and ambitions alike",
+    "haiku": {
+      "lines": [
+        "旅に病んで",
+        "夢は枯野を",
+        "かけめぐる"
+      ],
+      "reading": "たびにやんで ゆめはかれのを かけめぐる",
+      "translation": "Ill on a journey — / my dreams wander round / over withered fields",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "dream",
+    "keywords": [
+      "dream"
+    ],
+    "color": "purple",
+    "effect": "starlight"
+  },
+  {
+    "char": "跡",
+    "readings": {
+      "on": [
+        "セキ"
+      ],
+      "kun": [
+        "あと"
+      ]
+    },
+    "meaning": "trace, remains, footprint; what is left behind",
+    "haiku": {
+      "lines": [
+        "夏草や",
+        "兵どもが",
+        "夢の跡"
+      ],
+      "reading": "なつくさや つわものどもが ゆめのあと",
+      "translation": "Summer grasses — / all that remains / of warriors' dreams",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "trace",
+    "keywords": [
+      "trace",
+      "remains",
+      "footprint"
+    ],
+    "color": null,
+    "effect": null
+  },
+  {
+    "char": "閑",
+    "readings": {
+      "on": [
+        "カン"
+      ],
+      "kun": [
+        "しず"
+      ]
+    },
+    "meaning": "quiet, leisure, stillness; profound calm",
+    "haiku": {
+      "lines": [
+        "閑さや",
+        "岩にしみ入る",
+        "蝉の声"
+      ],
+      "reading": "しずかさや いわにしみいる せみのこえ",
+      "translation": "Stillness — / seeping into the rocks, / the cicada's cry",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "stillness",
+    "keywords": [
+      "stillness",
+      "quiet",
+      "calm"
+    ],
+    "color": "purple",
+    "effect": "starlight"
+  },
+  {
+    "char": "岩",
+    "readings": {
+      "on": [
+        "ガン"
+      ],
+      "kun": [
+        "いわ"
+      ]
+    },
+    "meaning": "rock, crag; stone that holds the mountain",
+    "haiku": {
+      "lines": [
+        "閑さや",
+        "岩にしみ入る",
+        "蝉の声"
+      ],
+      "reading": "しずかさや いわにしみいる せみのこえ",
+      "translation": "Stillness — / seeping into the rocks, / the cicada's cry",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "rock",
+    "keywords": [
+      "rock",
+      "crag"
+    ],
+    "color": "orange",
+    "effect": "embers"
+  },
+  {
+    "char": "蝉",
+    "readings": {
+      "on": [
+        "セン"
+      ],
+      "kun": [
+        "せみ"
+      ]
+    },
+    "meaning": "cicada; the insistent voice of midsummer",
+    "haiku": {
+      "lines": [
+        "閑さや",
+        "岩にしみ入る",
+        "蝉の声"
+      ],
+      "reading": "しずかさや いわにしみいる せみのこえ",
+      "translation": "Stillness — / seeping into the rocks, / the cicada's cry",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "cicada",
+    "keywords": [
+      "cicada",
+      "semi"
+    ],
+    "color": "green",
+    "effect": "grass"
+  },
+  {
+    "char": "声",
+    "readings": {
+      "on": [
+        "セイ",
+        "ショウ"
+      ],
+      "kun": [
+        "こえ"
+      ]
+    },
+    "meaning": "voice, sound of a living thing; cry or call",
+    "haiku": {
+      "lines": [
+        "閑さや",
+        "岩にしみ入る",
+        "蝉の声"
+      ],
+      "reading": "しずかさや いわにしみいる せみのこえ",
+      "translation": "Stillness — / seeping into the rocks, / the cicada's cry",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "voice",
+    "keywords": [
+      "voice",
+      "cry"
+    ],
+    "color": null,
+    "effect": null
+  },
+  {
+    "char": "雨",
+    "readings": {
+      "on": [
+        "ウ"
+      ],
+      "kun": [
+        "あめ",
+        "あま"
+      ]
+    },
+    "meaning": "rain; water falling from the sky",
+    "haiku": {
+      "lines": [
+        "五月雨を",
+        "あつめて早し",
+        "最上川"
+      ],
+      "reading": "さみだれを あつめてはやし もがみがわ",
+      "translation": "Gathering the rains / of early summer, how swift — / the Mogami River",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "rain",
+    "keywords": [
+      "rain",
+      "rainfall"
+    ],
+    "color": "blue",
+    "effect": "starlight"
+  },
+  {
+    "char": "川",
+    "readings": {
+      "on": [
+        "セン"
+      ],
+      "kun": [
+        "かわ"
+      ]
+    },
+    "meaning": "river, stream; water on its way to the sea",
+    "haiku": {
+      "lines": [
+        "五月雨を",
+        "あつめて早し",
+        "最上川"
+      ],
+      "reading": "さみだれを あつめてはやし もがみがわ",
+      "translation": "Gathering the rains / of early summer, how swift — / the Mogami River",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "river",
+    "keywords": [
+      "river",
+      "stream"
+    ],
+    "color": "blue",
+    "effect": "starlight"
+  },
+  {
+    "char": "旅",
+    "readings": {
+      "on": [
+        "リョ"
+      ],
+      "kun": [
+        "たび"
+      ]
+    },
+    "meaning": "journey, travel; life as a road between inns",
+    "haiku": {
+      "lines": [
+        "旅に病んで",
+        "夢は枯野を",
+        "かけめぐる"
+      ],
+      "reading": "たびにやんで ゆめはかれのを かけめぐる",
+      "translation": "Ill on a journey — / my dreams wander round / over withered fields",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "journey",
+    "keywords": [
+      "journey",
+      "travel"
+    ],
+    "color": null,
+    "effect": null
+  },
+  {
+    "char": "病",
+    "readings": {
+      "on": [
+        "ビョウ"
+      ],
+      "kun": [
+        "や",
+        "やまい"
+      ]
+    },
+    "meaning": "illness, sickness; the body's frailty",
+    "haiku": {
+      "lines": [
+        "旅に病んで",
+        "夢は枯野を",
+        "かけめぐる"
+      ],
+      "reading": "たびにやんで ゆめはかれのを かけめぐる",
+      "translation": "Ill on a journey — / my dreams wander round / over withered fields",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "illness",
+    "keywords": [
+      "illness",
+      "sickness",
+      "sick"
+    ],
+    "color": "red",
+    "effect": "embers"
+  },
+  {
+    "char": "枯",
+    "readings": {
+      "on": [
+        "コ"
+      ],
+      "kun": [
+        "か",
+        "か"
+      ]
+    },
+    "meaning": "wither, dry up; autumn's and winter's bare beauty",
+    "haiku": {
+      "lines": [
+        "旅に病んで",
+        "夢は枯野を",
+        "かけめぐる"
+      ],
+      "reading": "たびにやんで ゆめはかれのを かけめぐる",
+      "translation": "Ill on a journey — / my dreams wander round / over withered fields",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "wither",
+    "keywords": [
+      "wither",
+      "dry"
+    ],
+    "color": "orange",
+    "effect": "embers"
+  },
+  {
+    "char": "野",
+    "readings": {
+      "on": [
+        "ヤ",
+        "ショ"
+      ],
+      "kun": [
+        "の"
+      ]
+    },
+    "meaning": "field, plain; open land beyond the village",
+    "haiku": {
+      "lines": [
+        "旅に病んで",
+        "夢は枯野を",
+        "かけめぐる"
+      ],
+      "reading": "たびにやんで ゆめはかれのを かけめぐる",
+      "translation": "Ill on a journey — / my dreams wander round / over withered fields",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "field",
+    "keywords": [
+      "field",
+      "plain"
+    ],
+    "color": "green",
+    "effect": "grass"
+  },
+  {
+    "char": "道",
+    "readings": {
+      "on": [
+        "ドウ",
+        "トウ"
+      ],
+      "kun": [
+        "みち"
+      ]
+    },
+    "meaning": "road, path, way; also the philosophical Way",
+    "haiku": {
+      "lines": [
+        "この道や",
+        "行く人なしに",
+        "秋の暮れ"
+      ],
+      "reading": "このみちや ゆくひとなしに あきのくれ",
+      "translation": "This road — / no one walks it / autumn evening",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "path",
+    "keywords": [
+      "path",
+      "way",
+      "road"
+    ],
+    "color": null,
+    "effect": null
+  },
+  {
+    "char": "人",
+    "readings": {
+      "on": [
+        "ジン",
+        "ニン"
+      ],
+      "kun": [
+        "ひと"
+      ]
+    },
+    "meaning": "person, human being; someone on the path",
+    "haiku": {
+      "lines": [
+        "この道や",
+        "行く人なしに",
+        "秋の暮れ"
+      ],
+      "reading": "このみちや ゆくひとなしに あきのくれ",
+      "translation": "This road — / no one walks it / autumn evening",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "person",
+    "keywords": [
+      "person",
+      "human"
+    ],
+    "color": null,
+    "effect": null
+  },
+  {
+    "char": "秋",
+    "readings": {
+      "on": [
+        "シュウ"
+      ],
+      "kun": [
+        "あき"
+      ]
+    },
+    "meaning": "autumn; harvest, decline, and clear light",
+    "haiku": {
+      "lines": [
+        "この道や",
+        "行く人なしに",
+        "秋の暮れ"
+      ],
+      "reading": "このみちや ゆくひとなしに あきのくれ",
+      "translation": "This road — / no one walks it / autumn evening",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "autumn",
+    "keywords": [
+      "autumn",
+      "fall"
+    ],
+    "color": "orange",
+    "effect": "embers"
+  },
+  {
+    "char": "海",
+    "readings": {
+      "on": [
+        "カイ"
+      ],
+      "kun": [
+        "うみ"
+      ]
+    },
+    "meaning": "sea, ocean; the wide water beyond the shore",
+    "haiku": {
+      "lines": [
+        "荒海や",
+        "佐渡によこたふ",
+        "天の川"
+      ],
+      "reading": "あらうみや さどによこたう あまのがわ",
+      "translation": "Rough sea — / stretching to Sado Island, / the River of Heaven",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "sea",
+    "keywords": [
+      "sea",
+      "ocean"
+    ],
+    "color": "blue",
+    "effect": "starlight"
+  },
+  {
+    "char": "天",
+    "readings": {
+      "on": [
+        "テン"
+      ],
+      "kun": [
+        "あめ",
+        "あま"
+      ]
+    },
+    "meaning": "heaven, sky; the realm above",
+    "haiku": {
+      "lines": [
+        "荒海や",
+        "佐渡によこたふ",
+        "天の川"
+      ],
+      "reading": "あらうみや さどによこたう あまのがわ",
+      "translation": "Rough sea — / stretching to Sado Island, / the River of Heaven",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "heaven",
+    "keywords": [
+      "heaven",
+      "sky"
+    ],
+    "color": "blue",
+    "effect": "starlight"
+  },
+  {
+    "char": "荒",
+    "readings": {
+      "on": [
+        "コウ"
+      ],
+      "kun": [
+        "あ",
+        "あら"
+      ]
+    },
+    "meaning": "wild, rough, desolate; weather and land untamed",
+    "haiku": {
+      "lines": [
+        "荒海や",
+        "佐渡によこたふ",
+        "天の川"
+      ],
+      "reading": "あらうみや さどによこたう あまのがわ",
+      "translation": "Rough sea — / stretching to Sado Island, / the River of Heaven",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "wild",
+    "keywords": [
+      "wild",
+      "rough"
+    ],
+    "color": null,
+    "effect": null
+  },
+  {
+    "char": "梅",
+    "readings": {
+      "on": [
+        "バイ"
+      ],
+      "kun": [
+        "うめ"
+      ]
+    },
+    "meaning": "plum blossom; the first brave flower of late winter",
+    "haiku": {
+      "lines": [
+        "梅が香に",
+        "のっと日の出る",
+        "山路かな"
+      ],
+      "reading": "うめがかに のっとひのでる やまぢかな",
+      "translation": "In plum blossom scent / suddenly the sun rises — / a mountain path",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "plum",
+    "keywords": [
+      "plum",
+      "ume",
+      "plumblossom"
+    ],
+    "color": "pastel-red",
+    "effect": "sakura"
+  },
+  {
+    "char": "香",
+    "readings": {
+      "on": [
+        "コウ",
+        "キョウ"
+      ],
+      "kun": [
+        "か",
+        "かお"
+      ]
+    },
+    "meaning": "fragrance, incense; scent that carries memory",
+    "haiku": {
+      "lines": [
+        "梅が香に",
+        "のっと日の出る",
+        "山路かな"
+      ],
+      "reading": "うめがかに のっとひのでる やまぢかな",
+      "translation": "In plum blossom scent / suddenly the sun rises — / a mountain path",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "fragrance",
+    "keywords": [
+      "fragrance",
+      "scent",
+      "incense"
+    ],
+    "color": "pastel-purple",
+    "effect": "sakura"
+  },
+  {
+    "char": "山",
+    "readings": {
+      "on": [
+        "サン",
+        "セン"
+      ],
+      "kun": [
+        "やま"
+      ]
+    },
+    "meaning": "mountain; also a great heap or pile",
+    "haiku": {
+      "lines": [
+        "梅が香に",
+        "のっと日の出る",
+        "山路かな"
+      ],
+      "reading": "うめがかに のっとひのでる やまぢかな",
+      "translation": "In plum blossom scent / suddenly the sun rises — / a mountain path",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "mountain",
+    "keywords": [
+      "mountain",
+      "mount"
+    ],
+    "color": "green",
+    "effect": "grass"
+  },
+  {
+    "char": "路",
+    "readings": {
+      "on": [
+        "ロ"
+      ],
+      "kun": [
+        "じ",
+        "みち"
+      ]
+    },
+    "meaning": "road, route; a way through the landscape",
+    "haiku": {
+      "lines": [
+        "梅が香に",
+        "のっと日の出る",
+        "山路かな"
+      ],
+      "reading": "うめがかに のっとひのでる やまぢかな",
+      "translation": "In plum blossom scent / suddenly the sun rises — / a mountain path",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "road",
+    "keywords": [
+      "road",
+      "route"
+    ],
+    "color": null,
+    "effect": null
+  },
+  {
+    "char": "桜",
+    "readings": {
+      "on": [
+        "オウ",
+        "ヨウ"
+      ],
+      "kun": [
+        "さくら"
+      ]
+    },
+    "meaning": "cherry blossom; spring's brief, brilliant bloom",
+    "haiku": {
+      "lines": [
+        "さまざまの",
+        "事おもひ出す",
+        "桜かな"
+      ],
+      "reading": "さまざまの ことおもひだす さくらかな",
+      "translation": "So many things / they bring to mind — / cherry blossoms",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "cherry",
+    "keywords": [
+      "cherry",
+      "sakura",
+      "cherryblossom"
+    ],
+    "color": "pastel-red",
+    "effect": "sakura"
+  },
+  {
+    "char": "風",
+    "readings": {
+      "on": [
+        "フウ",
+        "フ"
+      ],
+      "kun": [
+        "かぜ"
+      ]
+    },
+    "meaning": "wind; also style, manner, aesthetic flavor",
+    "haiku": {
+      "lines": [
+        "富士の風や",
+        "扇にのせて",
+        "江戸土産"
+      ],
+      "reading": "ふじのかぜや おうぎにのせて えどみやげ",
+      "translation": "Fuji's wind — / I'll pack it on a fan / as an Edo souvenir",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "wind",
+    "keywords": [
+      "wind",
+      "breeze"
+    ],
+    "color": "pastel-blue",
+    "effect": "grass"
+  },
+  {
+    "char": "扇",
+    "readings": {
+      "on": [
+        "セン"
+      ],
+      "kun": [
+        "おうぎ",
+        "あお"
+      ]
+    },
+    "meaning": "folding fan; wind you can hold in your hand",
+    "haiku": {
+      "lines": [
+        "富士の風や",
+        "扇にのせて",
+        "江戸土産"
+      ],
+      "reading": "ふじのかぜや おうぎにのせて えどみやげ",
+      "translation": "Fuji's wind — / I'll pack it on a fan / as an Edo souvenir",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "fan",
+    "keywords": [
+      "fan",
+      "sensu"
+    ],
+    "color": "pastel-yellow",
+    "effect": "embers"
+  },
+  {
+    "char": "光",
+    "readings": {
+      "on": [
+        "コウ"
+      ],
+      "kun": [
+        "ひかり",
+        "ひか"
+      ]
+    },
+    "meaning": "light, radiance; brilliance and clarity",
+    "haiku": {
+      "lines": [
+        "五月雨の",
+        "降り残してや",
+        "光堂"
+      ],
+      "reading": "さみだれの ふりのこしてや ひかりどう",
+      "translation": "The early-summer rains / fell everywhere — but not / on the Hall of Light",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "light",
+    "keywords": [
+      "light",
+      "radiance"
+    ],
+    "color": "yellow",
+    "effect": "sunrays"
+  },
+  {
+    "char": "堂",
+    "readings": {
+      "on": [
+        "ドウ"
+      ],
+      "kun": []
+    },
+    "meaning": "hall, temple building; a place set apart",
+    "haiku": {
+      "lines": [
+        "五月雨の",
+        "降り残してや",
+        "光堂"
+      ],
+      "reading": "さみだれの ふりのこしてや ひかりどう",
+      "translation": "The early-summer rains / fell everywhere — but not / on the Hall of Light",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "hall",
+    "keywords": [
+      "hall",
+      "temple"
+    ],
+    "color": "purple",
+    "effect": null
+  },
+  {
+    "char": "空",
+    "readings": {
+      "on": [
+        "クウ"
+      ],
+      "kun": [
+        "そら",
+        "あ",
+        "から"
+      ]
+    },
+    "meaning": "sky, empty, void; openness above and within",
+    "haiku": {
+      "lines": [
+        "雲雀より",
+        "空にやすらふ",
+        "峠かな"
+      ],
+      "reading": "ひばりより そらにやすらふ とうげかな",
+      "translation": "Higher than the skylark / rests at ease in the sky — / this mountain pass",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "sky",
+    "keywords": [
+      "sky",
+      "void",
+      "empty"
+    ],
+    "color": "pastel-blue",
+    "effect": "starlight"
+  },
+  {
+    "char": "雲",
+    "readings": {
+      "on": [
+        "ウン"
+      ],
+      "kun": [
+        "くも"
+      ]
+    },
+    "meaning": "cloud; weather written across the sky",
+    "haiku": {
+      "lines": [
+        "雲雀より",
+        "空にやすらふ",
+        "峠かな"
+      ],
+      "reading": "ひばりより そらにやすらふ とうげかな",
+      "translation": "Higher than the skylark / rests at ease in the sky — / this mountain pass",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "cloud",
+    "keywords": [
+      "cloud",
+      "cloudy"
+    ],
+    "color": "pastel-blue",
+    "effect": "starlight"
+  },
+  {
+    "char": "峠",
+    "readings": {
+      "on": [],
+      "kun": [
+        "とうげ"
+      ]
+    },
+    "meaning": "mountain pass; the ridge where roads crest",
+    "haiku": {
+      "lines": [
+        "雲雀より",
+        "空にやすらふ",
+        "峠かな"
+      ],
+      "reading": "ひばりより そらにやすらふ とうげかな",
+      "translation": "Higher than the skylark / rests at ease in the sky — / this mountain pass",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "pass",
+    "keywords": [
+      "pass",
+      "mountainpass"
+    ],
+    "color": "green",
+    "effect": "grass"
+  },
+  {
+    "char": "春",
+    "readings": {
+      "on": [
+        "シュン"
+      ],
+      "kun": [
+        "はる"
+      ]
+    },
+    "meaning": "spring; beginning, thaw, and new green",
+    "haiku": {
+      "lines": [
+        "行く春や",
+        "鳥啼き魚の",
+        "目は泪"
+      ],
+      "reading": "ゆくはるや とりなきうおの めはなみだ",
+      "translation": "Spring is leaving — / birds cry, and in the eyes of fish / are tears",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "spring",
+    "keywords": [
+      "spring",
+      "springtime"
+    ],
+    "color": "pastel-green",
+    "effect": "sakura"
+  },
+  {
+    "char": "鳥",
+    "readings": {
+      "on": [
+        "チョウ"
+      ],
+      "kun": [
+        "とり"
+      ]
+    },
+    "meaning": "bird; a winged creature of song and sky",
+    "haiku": {
+      "lines": [
+        "行く春や",
+        "鳥啼き魚の",
+        "目は泪"
+      ],
+      "reading": "ゆくはるや とりなきうおの めはなみだ",
+      "translation": "Spring is leaving — / birds cry, and in the eyes of fish / are tears",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "bird",
+    "keywords": [
+      "bird"
+    ],
+    "color": "orange",
+    "effect": "embers"
+  },
+  {
+    "char": "魚",
+    "readings": {
+      "on": [
+        "ギョ"
+      ],
+      "kun": [
+        "うお",
+        "さかな"
+      ]
+    },
+    "meaning": "fish; life that moves under water",
+    "haiku": {
+      "lines": [
+        "行く春や",
+        "鳥啼き魚の",
+        "目は泪"
+      ],
+      "reading": "ゆくはるや とりなきうおの めはなみだ",
+      "translation": "Spring is leaving — / birds cry, and in the eyes of fish / are tears",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "fish",
+    "keywords": [
+      "fish"
+    ],
+    "color": "blue",
+    "effect": "starlight"
+  },
+  {
+    "char": "泪",
+    "readings": {
+      "on": [
+        "ルイ"
+      ],
+      "kun": [
+        "なみだ"
+      ]
+    },
+    "meaning": "tears (variant of 涙); grief made visible",
+    "haiku": {
+      "lines": [
+        "行く春や",
+        "鳥啼き魚の",
+        "目は泪"
+      ],
+      "reading": "ゆくはるや とりなきうおの めはなみだ",
+      "translation": "Spring is leaving — / birds cry, and in the eyes of fish / are tears",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "tears",
+    "keywords": [
+      "tears",
+      "tear",
+      "crying"
+    ],
+    "color": "pastel-blue",
+    "effect": "starlight"
+  },
+  {
+    "char": "葉",
+    "readings": {
+      "on": [
+        "ヨウ"
+      ],
+      "kun": [
+        "は"
+      ]
+    },
+    "meaning": "leaf; the green page of a tree",
+    "haiku": {
+      "lines": [
+        "あらたふと",
+        "青葉若葉の",
+        "日の光"
+      ],
+      "reading": "あらたふと あおばわかばの ひのひかり",
+      "translation": "How solemn — / green leaves, young leaves / in the light of the sun",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "leaf",
+    "keywords": [
+      "leaf",
+      "foliage"
+    ],
+    "color": "green",
+    "effect": "grass"
+  },
+  {
+    "char": "青",
+    "readings": {
+      "on": [
+        "セイ",
+        "ショウ"
+      ],
+      "kun": [
+        "あお"
+      ]
+    },
+    "meaning": "blue, green; the color of youth and distance",
+    "haiku": {
+      "lines": [
+        "あらたふと",
+        "青葉若葉の",
+        "日の光"
+      ],
+      "reading": "あらたふと あおばわかばの ひのひかり",
+      "translation": "How solemn — / green leaves, young leaves / in the light of the sun",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "blue",
+    "keywords": [
+      "blue",
+      "green"
+    ],
+    "color": "green",
+    "effect": "grass"
+  },
+  {
+    "char": "日",
+    "readings": {
+      "on": [
+        "ニチ",
+        "ジツ"
+      ],
+      "kun": [
+        "ひ",
+        "か"
+      ]
+    },
+    "meaning": "sun, day; light and the measure of time",
+    "haiku": {
+      "lines": [
+        "あらたふと",
+        "青葉若葉の",
+        "日の光"
+      ],
+      "reading": "あらたふと あおばわかばの ひのひかり",
+      "translation": "How solemn — / green leaves, young leaves / in the light of the sun",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "sun",
+    "keywords": [
+      "sun",
+      "day"
+    ],
+    "color": "yellow",
+    "effect": "sunrays"
+  },
+  {
+    "char": "月",
+    "readings": {
+      "on": [
+        "ゲツ",
+        "ガツ"
+      ],
+      "kun": [
+        "つき"
+      ]
+    },
+    "meaning": "moon, month; night's lantern and the calendar's turn",
+    "haiku": {
+      "lines": [
+        "名月を",
+        "取ってくれろと",
+        "泣く子かな"
+      ],
+      "reading": "めいげつを とってくれろと なくこかな",
+      "translation": "The harvest moon — / “give it to me!” cries / the child",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "keyword": "moon",
+    "keywords": [
+      "moon",
+      "month"
+    ],
+    "color": "pastel-yellow",
+    "effect": "starlight"
+  },
+  {
+    "char": "子",
+    "readings": {
+      "on": [
+        "シ",
+        "ス"
+      ],
+      "kun": [
+        "こ"
+      ]
+    },
+    "meaning": "child; also a small thing, or the young of animals",
+    "haiku": {
+      "lines": [
+        "名月を",
+        "取ってくれろと",
+        "泣く子かな"
+      ],
+      "reading": "めいげつを とってくれろと なくこかな",
+      "translation": "The harvest moon — / “give it to me!” cries / the child",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "keyword": "child",
+    "keywords": [
+      "child",
+      "kid"
+    ],
+    "color": "pastel-yellow",
+    "effect": "starlight"
+  },
+  {
+    "char": "雪",
+    "readings": {
+      "on": [
+        "セツ"
+      ],
+      "kun": [
+        "ゆき"
+      ]
+    },
+    "meaning": "snow; winter's quiet covering",
+    "haiku": {
+      "lines": [
+        "雪とけて",
+        "村一ぱいの",
+        "子どもかな"
+      ],
+      "reading": "ゆきとけて むらいっぱいの こどもかな",
+      "translation": "Snow melting — / the whole village / full of children",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "keyword": "snow",
+    "keywords": [
+      "snow",
+      "snowy"
+    ],
+    "color": "pastel-blue",
+    "effect": "starlight"
+  },
+  {
+    "char": "村",
+    "readings": {
+      "on": [
+        "ソン"
+      ],
+      "kun": [
+        "むら"
+      ]
+    },
+    "meaning": "village; a small community among fields",
+    "haiku": {
+      "lines": [
+        "雪とけて",
+        "村一ぱいの",
+        "子どもかな"
+      ],
+      "reading": "ゆきとけて むらいっぱいの こどもかな",
+      "translation": "Snow melting — / the whole village / full of children",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "keyword": "village",
+    "keywords": [
+      "village",
+      "town"
+    ],
+    "color": "green",
+    "effect": "grass"
+  },
+  {
+    "char": "心",
+    "readings": {
+      "on": [
+        "シン"
+      ],
+      "kun": [
+        "こころ"
+      ]
+    },
+    "meaning": "heart, mind, spirit; the seat of feeling",
+    "haiku": {
+      "lines": [
+        "心太",
+        "逆しまに滝",
+        "のぼりけり"
+      ],
+      "reading": "ところてん さかしまにたき のぼりけり",
+      "translation": "Tokoroten jelly — / upside-down it climbs / the waterfall",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "keyword": "heart",
+    "keywords": [
+      "heart",
+      "mind",
+      "spirit"
+    ],
+    "color": "red",
+    "effect": "embers"
+  },
+  {
+    "char": "滝",
+    "readings": {
+      "on": [
+        "ロウ",
+        "タキ"
+      ],
+      "kun": [
+        "たき"
+      ]
+    },
+    "meaning": "waterfall; a river's sudden fall",
+    "haiku": {
+      "lines": [
+        "心太",
+        "逆しまに滝",
+        "のぼりけり"
+      ],
+      "reading": "ところてん さかしまにたき のぼりけり",
+      "translation": "Tokoroten jelly — / upside-down it climbs / the waterfall",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "keyword": "waterfall",
+    "keywords": [
+      "waterfall",
+      "taki"
+    ],
+    "color": "blue",
+    "effect": "starlight"
+  },
+  {
+    "char": "雀",
+    "readings": {
+      "on": [
+        "ジャク"
+      ],
+      "kun": [
+        "すずめ"
+      ]
+    },
+    "meaning": "sparrow; a small bird of eaves and dust",
+    "haiku": {
+      "lines": [
+        "我と来て",
+        "遊べや親の",
+        "ない雀"
+      ],
+      "reading": "われときて あそべやおやの ないすずめ",
+      "translation": "Come play with me, / you parentless / sparrows",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "keyword": "sparrow",
+    "keywords": [
+      "sparrow",
+      "suzume"
+    ],
+    "color": "orange",
+    "effect": "embers"
+  },
+  {
+    "char": "親",
+    "readings": {
+      "on": [
+        "シン"
+      ],
+      "kun": [
+        "おや"
+      ]
+    },
+    "meaning": "parent; one who raises and protects",
+    "haiku": {
+      "lines": [
+        "我と来て",
+        "遊べや親の",
+        "ない雀"
+      ],
+      "reading": "われときて あそべやおやの ないすずめ",
+      "translation": "Come play with me, / you parentless / sparrows",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "keyword": "parent",
+    "keywords": [
+      "parent",
+      "mother",
+      "father"
+    ],
+    "color": "pastel-purple",
+    "effect": "starlight"
+  },
+  {
+    "char": "遊",
+    "readings": {
+      "on": [
+        "ユウ",
+        "ユ"
+      ],
+      "kun": [
+        "あそ"
+      ]
+    },
+    "meaning": "play, amuse oneself; wandering at ease",
+    "haiku": {
+      "lines": [
+        "我と来て",
+        "遊べや親の",
+        "ない雀"
+      ],
+      "reading": "われときて あそべやおやの ないすずめ",
+      "translation": "Come play with me, / you parentless / sparrows",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "keyword": "play",
+    "keywords": [
+      "play",
+      "amuse"
+    ],
+    "color": null,
+    "effect": null
+  },
+  {
+    "char": "花",
+    "readings": {
+      "on": [
+        "カ",
+        "ケ"
+      ],
+      "kun": [
+        "はな"
+      ]
+    },
+    "meaning": "flower, blossom; beauty that opens and falls",
+    "haiku": {
+      "lines": [
+        "菜の花や",
+        "月は東に",
+        "日は西に"
+      ],
+      "reading": "なのはなや つきはひがしに ひはにしに",
+      "translation": "Canola flowers — / the moon in the east, / the sun in the west",
+      "author": "与謝蕪村",
+      "author_en": "Yosa Buson"
+    },
+    "keyword": "flower",
+    "keywords": [
+      "flower",
+      "blossom"
+    ],
+    "color": "pastel-red",
+    "effect": "sakura"
+  },
+  {
+    "char": "菜",
+    "readings": {
+      "on": [
+        "サイ"
+      ],
+      "kun": [
+        "な"
+      ]
+    },
+    "meaning": "greens, rape blossom; a field of yellow spring",
+    "haiku": {
+      "lines": [
+        "菜の花や",
+        "月は東に",
+        "日は西に"
+      ],
+      "reading": "なのはなや つきはひがしに ひはにしに",
+      "translation": "Canola flowers — / the moon in the east, / the sun in the west",
+      "author": "与謝蕪村",
+      "author_en": "Yosa Buson"
+    },
+    "keyword": "greens",
+    "keywords": [
+      "greens",
+      "canola",
+      "rapeseed"
+    ],
+    "color": "pastel-green",
+    "effect": "grass"
+  },
+  {
+    "char": "東",
+    "readings": {
+      "on": [
+        "トウ"
+      ],
+      "kun": [
+        "ひがし",
+        "あずま"
+      ]
+    },
+    "meaning": "east; where the sun and moon rise",
+    "haiku": {
+      "lines": [
+        "菜の花や",
+        "月は東に",
+        "日は西に"
+      ],
+      "reading": "なのはなや つきはひがしに ひはにしに",
+      "translation": "Canola flowers — / the moon in the east, / the sun in the west",
+      "author": "与謝蕪村",
+      "author_en": "Yosa Buson"
+    },
+    "keyword": "east",
+    "keywords": [
+      "east"
+    ],
+    "color": "orange",
+    "effect": "sunrays"
+  },
+  {
+    "char": "西",
+    "readings": {
+      "on": [
+        "セイ",
+        "サイ"
+      ],
+      "kun": [
+        "にし"
+      ]
+    },
+    "meaning": "west; where light goes to rest",
+    "haiku": {
+      "lines": [
+        "菜の花や",
+        "月は東に",
+        "日は西に"
+      ],
+      "reading": "なのはなや つきはひがしに ひはにしに",
+      "translation": "Canola flowers — / the moon in the east, / the sun in the west",
+      "author": "与謝蕪村",
+      "author_en": "Yosa Buson"
+    },
+    "keyword": "west",
+    "keywords": [
+      "west"
+    ],
+    "color": "purple",
+    "effect": "starlight"
+  },
+  {
+    "char": "終",
+    "readings": {
+      "on": [
+        "シュウ"
+      ],
+      "kun": [
+        "お"
+      ]
+    },
+    "meaning": "end, finish; all day long, to the close",
+    "haiku": {
+      "lines": [
+        "春の海",
+        "終日のたり",
+        "のたりかな"
+      ],
+      "reading": "はるのうみ ひねもすのたり のたりかな",
+      "translation": "The spring sea — / all day long, rising / and falling, rising and falling",
+      "author": "与謝蕪村",
+      "author_en": "Yosa Buson"
+    },
+    "keyword": "end",
+    "keywords": [
+      "end",
+      "finish"
+    ],
+    "color": null,
+    "effect": null
+  },
+  {
+    "char": "河",
+    "readings": {
+      "on": [
+        "カ"
+      ],
+      "kun": [
+        "かわ"
+      ]
+    },
+    "meaning": "river (often a great one); flowing water of the land",
+    "haiku": {
+      "lines": [
+        "さみだれや",
+        "大河を前に",
+        "家二軒"
+      ],
+      "reading": "さみだれや たいがをまえに いえにけん",
+      "translation": "Early-summer rain — / before the great river, / two houses",
+      "author": "与謝蕪村",
+      "author_en": "Yosa Buson"
+    },
+    "keyword": "stream",
+    "keywords": [
+      "stream",
+      "river"
+    ],
+    "color": "blue",
+    "effect": "starlight"
+  },
+  {
+    "char": "家",
+    "readings": {
+      "on": [
+        "カ",
+        "ケ"
+      ],
+      "kun": [
+        "いえ",
+        "や"
+      ]
+    },
+    "meaning": "house, home; a dwelling and the family within",
+    "haiku": {
+      "lines": [
+        "さみだれや",
+        "大河を前に",
+        "家二軒"
+      ],
+      "reading": "さみだれや たいがをまえに いえにけん",
+      "translation": "Early-summer rain — / before the great river, / two houses",
+      "author": "与謝蕪村",
+      "author_en": "Yosa Buson"
+    },
+    "keyword": "home",
+    "keywords": [
+      "home",
+      "house"
+    ],
+    "color": "orange",
+    "effect": "embers"
+  },
+  {
+    "char": "大",
+    "readings": {
+      "on": [
+        "ダイ",
+        "タイ"
+      ],
+      "kun": [
+        "おお"
+      ]
+    },
+    "meaning": "great, large; scale that humbles the self",
+    "haiku": {
+      "lines": [
+        "さみだれや",
+        "大河を前に",
+        "家二軒"
+      ],
+      "reading": "さみだれや たいがをまえに いえにけん",
+      "translation": "Early-summer rain — / before the great river, / two houses",
+      "author": "与謝蕪村",
+      "author_en": "Yosa Buson"
+    },
+    "keyword": "great",
+    "keywords": [
+      "great",
+      "large",
+      "big"
+    ],
+    "color": null,
+    "effect": null
+  },
+  {
+    "char": "火",
+    "readings": {
+      "on": [
+        "カ"
+      ],
+      "kun": [
+        "ひ",
+        "ほ"
+      ]
+    },
+    "meaning": "fire, flame; heat, hearth, and passion",
+    "haiku": {
+      "lines": [
+        "埋火や",
+        "壁には客の",
+        "影法師"
+      ],
+      "reading": "うずみびや かべにはきゃくの かげぼうし",
+      "translation": "Banked charcoal fire — / on the wall, the guest's / silhouette",
+      "author": "与謝蕪村",
+      "author_en": "Yosa Buson"
+    },
+    "keyword": "fire",
+    "keywords": [
+      "fire",
+      "flame"
+    ],
+    "color": "red",
+    "effect": "embers"
+  },
+  {
+    "char": "壁",
+    "readings": {
+      "on": [
+        "ヘキ"
+      ],
+      "kun": [
+        "かべ"
+      ]
+    },
+    "meaning": "wall; the surface that holds a shadow",
+    "haiku": {
+      "lines": [
+        "埋火や",
+        "壁には客の",
+        "影法師"
+      ],
+      "reading": "うずみびや かべにはきゃくの かげぼうし",
+      "translation": "Banked charcoal fire — / on the wall, the guest's / silhouette",
+      "author": "与謝蕪村",
+      "author_en": "Yosa Buson"
+    },
+    "keyword": "wall",
+    "keywords": [
+      "wall",
+      "barrier"
+    ],
+    "color": null,
+    "effect": null
+  },
+  {
+    "char": "影",
+    "readings": {
+      "on": [
+        "エイ"
+      ],
+      "kun": [
+        "かげ"
+      ]
+    },
+    "meaning": "shadow, silhouette; form cast by light",
+    "haiku": {
+      "lines": [
+        "埋火や",
+        "壁には客の",
+        "影法師"
+      ],
+      "reading": "うずみびや かべにはきゃくの かげぼうし",
+      "translation": "Banked charcoal fire — / on the wall, the guest's / silhouette",
+      "author": "与謝蕪村",
+      "author_en": "Yosa Buson"
+    },
+    "keyword": "shadow",
+    "keywords": [
+      "shadow",
+      "silhouette"
+    ],
+    "color": null,
+    "effect": null
+  },
+  {
+    "char": "客",
+    "readings": {
+      "on": [
+        "キャク",
+        "カク"
+      ],
+      "kun": []
+    },
+    "meaning": "guest, visitor; one welcomed for a while",
+    "haiku": {
+      "lines": [
+        "埋火や",
+        "壁には客の",
+        "影法師"
+      ],
+      "reading": "うずみびや かべにはきゃくの かげぼうし",
+      "translation": "Banked charcoal fire — / on the wall, the guest's / silhouette",
+      "author": "与謝蕪村",
+      "author_en": "Yosa Buson"
+    },
+    "keyword": "guest",
+    "keywords": [
+      "guest",
+      "visitor"
+    ],
+    "color": null,
+    "effect": null
+  },
+  {
+    "char": "白",
+    "readings": {
+      "on": [
+        "ハク",
+        "ビャク"
+      ],
+      "kun": [
+        "しろ",
+        "しら"
+      ]
+    },
+    "meaning": "white; purity, blankness, and winter light",
+    "haiku": {
+      "lines": [
+        "白梅に",
+        "明くる夜ばかり",
+        "となりにけり"
+      ],
+      "reading": "しらうめに あくるよばかり となりにけり",
+      "translation": "To white plum blossoms / the night has only now / begun to dawn",
+      "author": "与謝蕪村",
+      "author_en": "Yosa Buson"
+    },
+    "keyword": "white",
+    "keywords": [
+      "white",
+      "blank"
+    ],
+    "color": "pastel-blue",
+    "effect": "starlight"
+  },
+  {
+    "char": "夜",
+    "readings": {
+      "on": [
+        "ヤ"
+      ],
+      "kun": [
+        "よ",
+        "よる"
+      ]
+    },
+    "meaning": "night; the hours when the world grows quiet",
+    "haiku": {
+      "lines": [
+        "白梅に",
+        "明くる夜ばかり",
+        "となりにけり"
+      ],
+      "reading": "しらうめに あくるよばかり となりにけり",
+      "translation": "To white plum blossoms / the night has only now / begun to dawn",
+      "author": "与謝蕪村",
+      "author_en": "Yosa Buson"
+    },
+    "keyword": "night",
+    "keywords": [
+      "night"
+    ],
+    "color": "purple",
+    "effect": "starlight"
+  },
+  {
+    "char": "浪",
+    "readings": {
+      "on": [
+        "ロウ"
+      ],
+      "kun": [
+        "なみ"
+      ]
+    },
+    "meaning": "wave (literary form of 波); the sea's restless line",
+    "haiku": {
+      "lines": [
+        "稲妻や",
+        "浪もてゆへる",
+        "秋津島"
+      ],
+      "reading": "いなずまや なみもてゆえる あきつしま",
+      "translation": "Lightning — / waves stitching together / the islands of Japan",
+      "author": "与謝蕪村",
+      "author_en": "Yosa Buson"
+    },
+    "keyword": "wave",
+    "keywords": [
+      "wave",
+      "surf"
+    ],
+    "color": "blue",
+    "effect": "starlight"
+  },
+  {
+    "char": "島",
+    "readings": {
+      "on": [
+        "トウ"
+      ],
+      "kun": [
+        "しま"
+      ]
+    },
+    "meaning": "island; land held in the sea",
+    "haiku": {
+      "lines": [
+        "稲妻や",
+        "浪もてゆへる",
+        "秋津島"
+      ],
+      "reading": "いなずまや なみもてゆえる あきつしま",
+      "translation": "Lightning — / waves stitching together / the islands of Japan",
+      "author": "与謝蕪村",
+      "author_en": "Yosa Buson"
+    },
+    "keyword": "island",
+    "keywords": [
+      "island",
+      "isle"
+    ],
+    "color": "green",
+    "effect": "starlight"
+  },
+  {
+    "char": "京",
+    "readings": {
+      "on": [
+        "キョウ",
+        "ケイ"
+      ],
+      "kun": [
+        "みやこ"
+      ]
+    },
+    "meaning": "capital; the city of court and memory (Kyoto)",
+    "haiku": {
+      "lines": [
+        "ほととぎす",
+        "平安京を",
+        "筋かいに"
+      ],
+      "reading": "ほととぎす へいあんきょうを すじかいに",
+      "translation": "A cuckoo — / cutting diagonally / across Heian-kyō",
+      "author": "与謝蕪村",
+      "author_en": "Yosa Buson"
+    },
+    "keyword": "capital",
+    "keywords": [
+      "capital",
+      "kyoto"
+    ],
+    "color": "purple",
+    "effect": null
+  },
+  {
+    "char": "平",
+    "readings": {
+      "on": [
+        "ヘイ",
+        "ビョウ"
+      ],
+      "kun": [
+        "たい",
+        "ひら"
+      ]
+    },
+    "meaning": "flat, peaceful; also used in place names like 平安",
+    "haiku": {
+      "lines": [
+        "ほととぎす",
+        "平安京を",
+        "筋かいに"
+      ],
+      "reading": "ほととぎす へいあんきょうを すじかいに",
+      "translation": "A cuckoo — / cutting diagonally / across Heian-kyō",
+      "author": "与謝蕪村",
+      "author_en": "Yosa Buson"
+    },
+    "keyword": "peace",
+    "keywords": [
+      "peace",
+      "flat",
+      "peaceful"
+    ],
+    "color": null,
+    "effect": null
+  },
+  {
+    "char": "安",
+    "readings": {
+      "on": [
+        "アン"
+      ],
+      "kun": [
+        "やす"
+      ]
+    },
+    "meaning": "peace, ease, cheap; rest without worry",
+    "haiku": {
+      "lines": [
+        "ほととぎす",
+        "平安京を",
+        "筋かいに"
+      ],
+      "reading": "ほととぎす へいあんきょうを すじかいに",
+      "translation": "A cuckoo — / cutting diagonally / across Heian-kyō",
+      "author": "与謝蕪村",
+      "author_en": "Yosa Buson"
+    },
+    "keyword": "ease",
+    "keywords": [
+      "ease",
+      "peace",
+      "safe"
+    ],
+    "color": null,
+    "effect": null
+  },
+  {
+    "char": "柳",
+    "readings": {
+      "on": [
+        "リュウ"
+      ],
+      "kun": [
+        "やなぎ"
+      ]
+    },
+    "meaning": "willow; a tree that bends with the wind",
+    "haiku": {
+      "lines": [
+        "田一枚",
+        "植ゑて立ち去る",
+        "柳かな"
+      ],
+      "reading": "たいちまい うえてたちさる やなぎかな",
+      "translation": "One paddy planted — / then he walks away / under the willow",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "willow",
+    "keywords": [
+      "willow",
+      "yanagi"
+    ],
+    "color": "green",
+    "effect": "grass"
+  },
+  {
+    "char": "田",
+    "readings": {
+      "on": [
+        "デン"
+      ],
+      "kun": [
+        "た"
+      ]
+    },
+    "meaning": "rice field; water and grain in measured squares",
+    "haiku": {
+      "lines": [
+        "田一枚",
+        "植ゑて立ち去る",
+        "柳かな"
+      ],
+      "reading": "たいちまい うえてたちさる やなぎかな",
+      "translation": "One paddy planted — / then he walks away / under the willow",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "ricefield",
+    "keywords": [
+      "ricefield",
+      "paddy",
+      "rice"
+    ],
+    "color": "green",
+    "effect": "grass"
+  },
+  {
+    "char": "馬",
+    "readings": {
+      "on": [
+        "バ"
+      ],
+      "kun": [
+        "うま",
+        "ま"
+      ]
+    },
+    "meaning": "horse; strength for the road and the field",
+    "haiku": {
+      "lines": [
+        "野を横に",
+        "馬牽きむけよ",
+        "ほととぎす"
+      ],
+      "reading": "のをよこに うまひきむけよ ほととぎす",
+      "translation": "Across the fields — / turn the horse this way: / a cuckoo!",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "horse",
+    "keywords": [
+      "horse",
+      "uma"
+    ],
+    "color": "orange",
+    "effect": "embers"
+  },
+  {
+    "char": "石",
+    "readings": {
+      "on": [
+        "セキ",
+        "シャク"
+      ],
+      "kun": [
+        "いし"
+      ]
+    },
+    "meaning": "stone; hard, lasting, underfoot",
+    "haiku": {
+      "lines": [
+        "石山の",
+        "石より白し",
+        "秋の風"
+      ],
+      "reading": "いしやまの いしよりしろし あきのかぜ",
+      "translation": "Whiter than the stones / of Ishiyama — / the autumn wind",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "stone",
+    "keywords": [
+      "stone",
+      "rock"
+    ],
+    "color": "orange",
+    "effect": "embers"
+  },
+  {
+    "char": "寒",
+    "readings": {
+      "on": [
+        "カン"
+      ],
+      "kun": [
+        "さむ",
+        "さむ"
+      ]
+    },
+    "meaning": "cold; the season that sharpens the air",
+    "haiku": {
+      "lines": [
+        "梅が香に",
+        "追ひもどさるる",
+        "寒さかな"
+      ],
+      "reading": "うめがかに おいもどさるる さむさかな",
+      "translation": "By plum blossom scent / I am pulled back again — / into the cold",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "cold",
+    "keywords": [
+      "cold"
+    ],
+    "color": "pastel-blue",
+    "effect": "starlight"
+  },
+  {
+    "char": "世",
+    "readings": {
+      "on": [
+        "セイ",
+        "セ"
+      ],
+      "kun": [
+        "よ"
+      ]
+    },
+    "meaning": "world, age, society; this life we share",
+    "haiku": {
+      "lines": [
+        "世の中は",
+        "地獄の上の",
+        "花見かな"
+      ],
+      "reading": "よのなかは じごくのうえの はなみかな",
+      "translation": "This world of ours — / a blossom-viewing party / on the roof of hell",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "keyword": "world",
+    "keywords": [
+      "world",
+      "society",
+      "life"
+    ],
+    "color": null,
+    "effect": null
+  },
+  {
+    "char": "地",
+    "readings": {
+      "on": [
+        "チ",
+        "ジ"
+      ],
+      "kun": []
+    },
+    "meaning": "earth, ground; also land, place, hell (地獄)",
+    "haiku": {
+      "lines": [
+        "世の中は",
+        "地獄の上の",
+        "花見かな"
+      ],
+      "reading": "よのなかは じごくのうえの はなみかな",
+      "translation": "This world of ours — / a blossom-viewing party / on the roof of hell",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "keyword": "earth",
+    "keywords": [
+      "earth",
+      "ground",
+      "land"
+    ],
+    "color": "green",
+    "effect": "grass"
+  },
+  {
+    "char": "獄",
+    "readings": {
+      "on": [
+        "ゴク"
+      ],
+      "kun": []
+    },
+    "meaning": "prison, hell; a place of suffering (as in 地獄)",
+    "haiku": {
+      "lines": [
+        "世の中は",
+        "地獄の上の",
+        "花見かな"
+      ],
+      "reading": "よのなかは じごくのうえの はなみかな",
+      "translation": "This world of ours — / a blossom-viewing party / on the roof of hell",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "keyword": "hell",
+    "keywords": [
+      "hell",
+      "prison"
+    ],
+    "color": "red",
+    "effect": "embers"
+  },
+  {
+    "char": "見",
+    "readings": {
+      "on": [
+        "ケン"
+      ],
+      "kun": [
+        "み"
+      ]
+    },
+    "meaning": "see, look; to behold (as in 花見, blossom-viewing)",
+    "haiku": {
+      "lines": [
+        "世の中は",
+        "地獄の上の",
+        "花見かな"
+      ],
+      "reading": "よのなかは じごくのうえの はなみかな",
+      "translation": "This world of ours — / a blossom-viewing party / on the roof of hell",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "keyword": "see",
+    "keywords": [
+      "see",
+      "look",
+      "view"
+    ],
+    "color": null,
+    "effect": null
+  },
+  {
+    "char": "猫",
+    "readings": {
+      "on": [
+        "ビョウ"
+      ],
+      "kun": [
+        "ねこ"
+      ]
+    },
+    "meaning": "cat; a quiet companion of eaves and tatami",
+    "haiku": {
+      "lines": [
+        "寝たきりで",
+        "世を渡るなり",
+        "猫の恋"
+      ],
+      "reading": "ねたきりで よをわたるなり ねこのこい",
+      "translation": "Without even rising — / she still gets through the world: / a cat in love",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "keyword": "cat",
+    "keywords": [
+      "cat",
+      "neko"
+    ],
+    "color": "orange",
+    "effect": "embers"
+  },
+  {
+    "char": "恋",
+    "readings": {
+      "on": [
+        "レン"
+      ],
+      "kun": [
+        "こい",
+        "こい"
+      ]
+    },
+    "meaning": "love, longing; desire that pulls the heart",
+    "haiku": {
+      "lines": [
+        "寝たきりで",
+        "世を渡るなり",
+        "猫の恋"
+      ],
+      "reading": "ねたきりで よをわたるなり ねこのこい",
+      "translation": "Without even rising — / she still gets through the world: / a cat in love",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "keyword": "love",
+    "keywords": [
+      "love",
+      "longing"
+    ],
+    "color": "pastel-red",
+    "effect": "sakura"
+  },
+  {
+    "char": "寝",
+    "readings": {
+      "on": [
+        "シン"
+      ],
+      "kun": [
+        "ね"
+      ]
+    },
+    "meaning": "sleep, lie down; rest of the body",
+    "haiku": {
+      "lines": [
+        "寝たきりで",
+        "世を渡るなり",
+        "猫の恋"
+      ],
+      "reading": "ねたきりで よをわたるなり ねこのこい",
+      "translation": "Without even rising — / she still gets through the world: / a cat in love",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "keyword": "sleep",
+    "keywords": [
+      "sleep",
+      "rest"
+    ],
+    "color": null,
+    "effect": null
+  },
+  {
+    "char": "渡",
+    "readings": {
+      "on": [
+        "ト"
+      ],
+      "kun": [
+        "わた"
+      ]
+    },
+    "meaning": "cross, ferry; to make one's way across",
+    "haiku": {
+      "lines": [
+        "寝たきりで",
+        "世を渡るなり",
+        "猫の恋"
+      ],
+      "reading": "ねたきりで よをわたるなり ねこのこい",
+      "translation": "Without even rising — / she still gets through the world: / a cat in love",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "keyword": "cross",
+    "keywords": [
+      "cross",
+      "ferry"
+    ],
+    "color": "blue",
+    "effect": "starlight"
+  },
+  {
+    "char": "痩",
+    "readings": {
+      "on": [
+        "ソウ"
+      ],
+      "kun": [
+        "や"
+      ]
+    },
+    "meaning": "thin, lean; worn by hardship or winter",
+    "haiku": {
+      "lines": [
+        "痩蛙",
+        "負けるな一茶",
+        "これにあり"
+      ],
+      "reading": "やせがえる まけるないっさ これにあり",
+      "translation": "Skinny frog, / don't give up — Issa / is in your corner",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "keyword": "thin",
+    "keywords": [
+      "thin",
+      "lean",
+      "skinny"
+    ],
+    "color": null,
+    "effect": null
+  },
+  {
+    "char": "負",
+    "readings": {
+      "on": [
+        "フ"
+      ],
+      "kun": [
+        "ま",
+        "お"
+      ]
+    },
+    "meaning": "lose, defeat; also to bear a burden",
+    "haiku": {
+      "lines": [
+        "痩蛙",
+        "負けるな一茶",
+        "これにあり"
+      ],
+      "reading": "やせがえる まけるないっさ これにあり",
+      "translation": "Skinny frog, / don't give up — Issa / is in your corner",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "keyword": "defeat",
+    "keywords": [
+      "defeat",
+      "lose"
+    ],
+    "color": "red",
+    "effect": "embers"
+  },
+  {
+    "char": "茶",
+    "readings": {
+      "on": [
+        "チャ",
+        "サ"
+      ],
+      "kun": []
+    },
+    "meaning": "tea; the leaf, the drink, and the Way of Tea",
+    "haiku": {
+      "lines": [
+        "痩蛙",
+        "負けるな一茶",
+        "これにあり"
+      ],
+      "reading": "やせがえる まけるないっさ これにあり",
+      "translation": "Skinny frog, / don't give up — Issa / is in your corner",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "keyword": "tea",
+    "keywords": [
+      "tea",
+      "cha"
+    ],
+    "color": "green",
+    "effect": "grass"
+  },
+  {
+    "char": "愁",
+    "readings": {
+      "on": [
+        "シュウ"
+      ],
+      "kun": [
+        "うれ"
+      ]
+    },
+    "meaning": "melancholy, grief; a quiet sorrow",
+    "haiku": {
+      "lines": [
+        "愁ひつつ",
+        "岡にのぼれば",
+        "花いばら"
+      ],
+      "reading": "うれいつつ おかにのぼれば はないばら",
+      "translation": "Sunk in gloom — / I climb the hill, and there: / wild roses in bloom",
+      "author": "与謝蕪村",
+      "author_en": "Yosa Buson"
+    },
+    "keyword": "sorrow",
+    "keywords": [
+      "sorrow",
+      "grief",
+      "melancholy"
+    ],
+    "color": "purple",
+    "effect": "starlight"
+  },
+  {
+    "char": "岡",
+    "readings": {
+      "on": [
+        "コウ"
+      ],
+      "kun": [
+        "おか"
+      ]
+    },
+    "meaning": "hill; a gentle rise of land",
+    "haiku": {
+      "lines": [
+        "愁ひつつ",
+        "岡にのぼれば",
+        "花いばら"
+      ],
+      "reading": "うれいつつ おかにのぼれば はないばら",
+      "translation": "Sunk in gloom — / I climb the hill, and there: / wild roses in bloom",
+      "author": "与謝蕪村",
+      "author_en": "Yosa Buson"
+    },
+    "keyword": "hill",
+    "keywords": [
+      "hill",
+      "knoll"
+    ],
+    "color": "green",
+    "effect": "grass"
+  },
+  {
+    "char": "蛤",
+    "readings": {
+      "on": [
+        "コウ"
+      ],
+      "kun": [
+        "はまぐり"
+      ]
+    },
+    "meaning": "clam; a shell that closes and parts",
+    "haiku": {
+      "lines": [
+        "蛤の",
+        "ふたみにわかれ",
+        "行く秋ぞ"
+      ],
+      "reading": "はまぐりの ふたみにわかれ ゆくあきぞ",
+      "translation": "A clam / splits in two — parting / for autumn",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "clam",
+    "keywords": [
+      "clam",
+      "shellfish"
+    ],
+    "color": "pastel-yellow",
+    "effect": "embers"
+  },
+  {
+    "char": "鐘",
+    "readings": {
+      "on": [
+        "ショウ"
+      ],
+      "kun": [
+        "かね"
+      ]
+    },
+    "meaning": "bell; temple bronze that marks the hours",
+    "haiku": {
+      "lines": [
+        "鐘消えて",
+        "花の香は撞く",
+        "夕哉"
+      ],
+      "reading": "かねきえて はなのかはつく ゆうべかな",
+      "translation": "The bell fades — / only blossom scent still strikes / the evening",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "bell",
+    "keywords": [
+      "bell",
+      "templebell"
+    ],
+    "color": "yellow",
+    "effect": "sunrays"
+  },
+  {
+    "char": "夕",
+    "readings": {
+      "on": [
+        "セキ"
+      ],
+      "kun": [
+        "ゆう",
+        "ゆうべ"
+      ]
+    },
+    "meaning": "evening; the turn from day toward night",
+    "haiku": {
+      "lines": [
+        "鐘消えて",
+        "花の香は撞く",
+        "夕哉"
+      ],
+      "reading": "かねきえて はなのかはつく ゆうべかな",
+      "translation": "The bell fades — / only blossom scent still strikes / the evening",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "evening",
+    "keywords": [
+      "evening",
+      "dusk"
+    ],
+    "color": "orange",
+    "effect": "embers"
+  },
+  {
+    "char": "消",
+    "readings": {
+      "on": [
+        "ショウ"
+      ],
+      "kun": [
+        "き",
+        "け"
+      ]
+    },
+    "meaning": "vanish, extinguish; to fade away",
+    "haiku": {
+      "lines": [
+        "鐘消えて",
+        "花の香は撞く",
+        "夕哉"
+      ],
+      "reading": "かねきえて はなのかはつく ゆうべかな",
+      "translation": "The bell fades — / only blossom scent still strikes / the evening",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "vanish",
+    "keywords": [
+      "vanish",
+      "fade",
+      "extinguish"
+    ],
+    "color": null,
+    "effect": null
+  },
+  {
+    "char": "撞",
+    "readings": {
+      "on": [
+        "ドウ"
+      ],
+      "kun": [
+        "つ"
+      ]
+    },
+    "meaning": "strike, ring (a bell); a deliberate blow",
+    "haiku": {
+      "lines": [
+        "鐘消えて",
+        "花の香は撞く",
+        "夕哉"
+      ],
+      "reading": "かねきえて はなのかはつく ゆうべかな",
+      "translation": "The bell fades — / only blossom scent still strikes / the evening",
+      "author": "松尾芭蕉",
+      "author_en": "Matsuo Bashō"
+    },
+    "keyword": "strike",
+    "keywords": [
+      "strike",
+      "ring",
+      "hit"
+    ],
+    "color": null,
+    "effect": null
+  },
+  {
+    "char": "妹",
+    "readings": {
+      "on": [
+        "マイ"
+      ],
+      "kun": [
+        "いもと",
+        "いも"
+      ]
+    },
+    "meaning": "younger sister",
+    "keyword": "sister",
+    "keywords": [
+      "sister",
+      "younger-sister",
+      "imouto"
+    ],
+    "haiku": {
+      "lines": [
+        "やえやえの",
+        "妹もとつぐ",
+        "春辺哉"
+      ],
+      "reading": "やえやえの いもとつぐ はるべかな",
+      "translation": "Again and again — / even younger sister marries / in spring countryside",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": "pastel-red",
+    "effect": "sakura"
+  },
+  {
+    "char": "辺",
+    "readings": {
+      "on": [
+        "ヘン"
+      ],
+      "kun": [
+        "あた",
+        "べ"
+      ]
+    },
+    "meaning": "vicinity, area, edge; the countryside round about",
+    "keyword": "vicinity",
+    "keywords": [
+      "vicinity",
+      "area",
+      "side",
+      "border"
+    ],
+    "haiku": {
+      "lines": [
+        "やえやえの",
+        "妹もとつぐ",
+        "春辺哉"
+      ],
+      "reading": "やえやえの いもとつぐ はるべかな",
+      "translation": "Again and again — / even younger sister marries / in spring countryside",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": null,
+    "effect": null
+  },
+  {
+    "char": "姉",
+    "readings": {
+      "on": [
+        "シ"
+      ],
+      "kun": [
+        "あね"
+      ]
+    },
+    "meaning": "older sister",
+    "keyword": "sister-elder",
+    "keywords": [
+      "sister-elder",
+      "ane",
+      "older-sister",
+      "big-sister"
+    ],
+    "haiku": {
+      "lines": [
+        "土焼の",
+        "姉様うれる",
+        "春の雨"
+      ],
+      "reading": "どやきの あねさまうれる はるのあめ",
+      "translation": "Clay figures of elder sister / put out for sale — / spring rain",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": "pastel-red",
+    "effect": "sakura"
+  },
+  {
+    "char": "土",
+    "readings": {
+      "on": [
+        "ド",
+        "ト"
+      ],
+      "kun": [
+        "つち"
+      ]
+    },
+    "meaning": "earth, soil, clay",
+    "keyword": "soil",
+    "keywords": [
+      "soil",
+      "clay",
+      "earth",
+      "dirt"
+    ],
+    "haiku": {
+      "lines": [
+        "土焼の",
+        "姉様うれる",
+        "春の雨"
+      ],
+      "reading": "どやきの あねさまうれる はるのあめ",
+      "translation": "Clay figures of elder sister / put out for sale — / spring rain",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": "orange",
+    "effect": "embers"
+  },
+  {
+    "char": "焼",
+    "readings": {
+      "on": [
+        "ショウ"
+      ],
+      "kun": [
+        "や",
+        "やき"
+      ]
+    },
+    "meaning": "bake, burn, fire (as in pottery, 土焼)",
+    "keyword": "bake",
+    "keywords": [
+      "bake",
+      "burn",
+      "fired",
+      "pottery"
+    ],
+    "haiku": {
+      "lines": [
+        "土焼の",
+        "姉様うれる",
+        "春の雨"
+      ],
+      "reading": "どやきの あねさまうれる はるのあめ",
+      "translation": "Clay figures of elder sister / put out for sale — / spring rain",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": "orange",
+    "effect": "sunrays"
+  },
+  {
+    "char": "様",
+    "readings": {
+      "on": [
+        "ヨウ"
+      ],
+      "kun": [
+        "さま"
+      ]
+    },
+    "meaning": "form, manner; honorific title (-sama)",
+    "keyword": "sama",
+    "keywords": [
+      "sama",
+      "manner",
+      "form",
+      "honorific"
+    ],
+    "haiku": {
+      "lines": [
+        "土焼の",
+        "姉様うれる",
+        "春の雨"
+      ],
+      "reading": "どやきの あねさまうれる はるのあめ",
+      "translation": "Clay figures of elder sister / put out for sale — / spring rain",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": null,
+    "effect": null
+  },
+  {
+    "char": "父",
+    "readings": {
+      "on": [
+        "フ"
+      ],
+      "kun": [
+        "ちち",
+        "と"
+      ]
+    },
+    "meaning": "father",
+    "keyword": "father",
+    "keywords": [
+      "father",
+      "dad",
+      "chichi"
+    ],
+    "haiku": {
+      "lines": [
+        "父ありて",
+        "明ぼの見たし",
+        "青田原"
+      ],
+      "reading": "ちちありて あけぼのみたし あおたはら",
+      "translation": "With father here / how I long to see the dawn / over green rice fields",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": "blue",
+    "effect": "embers"
+  },
+  {
+    "char": "明",
+    "readings": {
+      "on": [
+        "メイ",
+        "ミョウ"
+      ],
+      "kun": [
+        "あ",
+        "あか",
+        "あき"
+      ]
+    },
+    "meaning": "bright, light; dawn (明ぼの)",
+    "keyword": "dawn",
+    "keywords": [
+      "dawn",
+      "bright",
+      "light",
+      "clear"
+    ],
+    "haiku": {
+      "lines": [
+        "父ありて",
+        "明ぼの見たし",
+        "青田原"
+      ],
+      "reading": "ちちありて あけぼのみたし あおたはら",
+      "translation": "With father here / how I long to see the dawn / over green rice fields",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": "yellow",
+    "effect": "sunrays"
+  },
+  {
+    "char": "原",
+    "readings": {
+      "on": [
+        "ゲン"
+      ],
+      "kun": [
+        "はら"
+      ]
+    },
+    "meaning": "plain, field, meadow; origin",
+    "keyword": "plain",
+    "keywords": [
+      "plain",
+      "meadow",
+      "origin",
+      "field-plain"
+    ],
+    "haiku": {
+      "lines": [
+        "父ありて",
+        "明ぼの見たし",
+        "青田原"
+      ],
+      "reading": "ちちありて あけぼのみたし あおたはら",
+      "translation": "With father here / how I long to see the dawn / over green rice fields",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": "green",
+    "effect": "grass"
+  },
+  {
+    "char": "母",
+    "readings": {
+      "on": [
+        "ボ"
+      ],
+      "kun": [
+        "はは",
+        "かあ"
+      ]
+    },
+    "meaning": "mother",
+    "keyword": "mother",
+    "keywords": [
+      "mother",
+      "mom",
+      "haha"
+    ],
+    "haiku": {
+      "lines": [
+        "茅の輪や",
+        "始三度は",
+        "母の分"
+      ],
+      "reading": "ちのわや はじめさんどは ははのぶん",
+      "translation": "The miscanthus ring — / the first three passes / are mother's share",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": "pastel-red",
+    "effect": "sakura"
+  },
+  {
+    "char": "茅",
+    "readings": {
+      "on": [
+        "ボウ"
+      ],
+      "kun": [
+        "かや",
+        "ち"
+      ]
+    },
+    "meaning": "miscanthus, thatch grass (茅の輪, purification ring)",
+    "keyword": "miscanthus",
+    "keywords": [
+      "miscanthus",
+      "thatch",
+      "kaya",
+      "chinowa"
+    ],
+    "haiku": {
+      "lines": [
+        "茅の輪や",
+        "始三度は",
+        "母の分"
+      ],
+      "reading": "ちのわや はじめさんどは ははのぶん",
+      "translation": "The miscanthus ring — / the first three passes / are mother's share",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": "green",
+    "effect": "grass"
+  },
+  {
+    "char": "輪",
+    "readings": {
+      "on": [
+        "リン"
+      ],
+      "kun": [
+        "わ"
+      ]
+    },
+    "meaning": "ring, circle, loop",
+    "keyword": "ring",
+    "keywords": [
+      "ring",
+      "circle",
+      "wheel",
+      "loop"
+    ],
+    "haiku": {
+      "lines": [
+        "茅の輪や",
+        "始三度は",
+        "母の分"
+      ],
+      "reading": "ちのわや はじめさんどは ははのぶん",
+      "translation": "The miscanthus ring — / the first three passes / are mother's share",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": null,
+    "effect": null
+  },
+  {
+    "char": "始",
+    "readings": {
+      "on": [
+        "シ"
+      ],
+      "kun": [
+        "はじ",
+        "はじ"
+      ]
+    },
+    "meaning": "begin, start; the first (time)",
+    "keyword": "begin",
+    "keywords": [
+      "begin",
+      "start",
+      "first",
+      "commence"
+    ],
+    "haiku": {
+      "lines": [
+        "茅の輪や",
+        "始三度は",
+        "母の分"
+      ],
+      "reading": "ちのわや はじめさんどは ははのぶん",
+      "translation": "The miscanthus ring — / the first three passes / are mother's share",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": null,
+    "effect": null
+  },
+  {
+    "char": "三",
+    "readings": {
+      "on": [
+        "サン",
+        "ゾウ"
+      ],
+      "kun": [
+        "み",
+        "みっ"
+      ]
+    },
+    "meaning": "three",
+    "keyword": "three",
+    "keywords": [
+      "three",
+      "triple"
+    ],
+    "haiku": {
+      "lines": [
+        "茅の輪や",
+        "始三度は",
+        "母の分"
+      ],
+      "reading": "ちのわや はじめさんどは ははのぶん",
+      "translation": "The miscanthus ring — / the first three passes / are mother's share",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": null,
+    "effect": null
+  },
+  {
+    "char": "度",
+    "readings": {
+      "on": [
+        "ド",
+        "タク"
+      ],
+      "kun": [
+        "たび"
+      ]
+    },
+    "meaning": "time, degree, occurrence; a turn",
+    "keyword": "times",
+    "keywords": [
+      "times",
+      "degree",
+      "occasion",
+      "turn"
+    ],
+    "haiku": {
+      "lines": [
+        "茅の輪や",
+        "始三度は",
+        "母の分"
+      ],
+      "reading": "ちのわや はじめさんどは ははのぶん",
+      "translation": "The miscanthus ring — / the first three passes / are mother's share",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": null,
+    "effect": null
+  },
+  {
+    "char": "分",
+    "readings": {
+      "on": [
+        "ブン",
+        "フン",
+        "ブ"
+      ],
+      "kun": [
+        "わ"
+      ]
+    },
+    "meaning": "part, portion, share; to divide",
+    "keyword": "share",
+    "keywords": [
+      "share",
+      "part",
+      "portion",
+      "divide"
+    ],
+    "haiku": {
+      "lines": [
+        "茅の輪や",
+        "始三度は",
+        "母の分"
+      ],
+      "reading": "ちのわや はじめさんどは ははのぶん",
+      "translation": "The miscanthus ring — / the first three passes / are mother's share",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": null,
+    "effect": null
+  },
+  {
+    "char": "兄",
+    "readings": {
+      "on": [
+        "ケイ",
+        "キョウ"
+      ],
+      "kun": [
+        "あに"
+      ]
+    },
+    "meaning": "older brother",
+    "keyword": "brother",
+    "keywords": [
+      "brother",
+      "older-brother",
+      "ani",
+      "big-brother"
+    ],
+    "haiku": {
+      "lines": [
+        "兄分の",
+        "門とむきあふ",
+        "夜寒哉"
+      ],
+      "reading": "あにぶんの かどとむきあう よさむかな",
+      "translation": "Facing the gate / of my elder-brother figure — / cold of night",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": "blue",
+    "effect": "embers"
+  },
+  {
+    "char": "門",
+    "readings": {
+      "on": [
+        "モン"
+      ],
+      "kun": [
+        "かど",
+        "と"
+      ]
+    },
+    "meaning": "gate, door; entrance",
+    "keyword": "gate",
+    "keywords": [
+      "gate",
+      "door",
+      "entrance"
+    ],
+    "haiku": {
+      "lines": [
+        "兄分の",
+        "門とむきあふ",
+        "夜寒哉"
+      ],
+      "reading": "あにぶんの かどとむきあう よさむかな",
+      "translation": "Facing the gate / of my elder-brother figure — / cold of night",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": "orange",
+    "effect": "embers"
+  },
+  {
+    "char": "弟",
+    "readings": {
+      "on": [
+        "テイ",
+        "ダイ"
+      ],
+      "kun": [
+        "おとうと"
+      ]
+    },
+    "meaning": "younger brother",
+    "keyword": "brother-younger",
+    "keywords": [
+      "brother-younger",
+      "otouto",
+      "younger-brother"
+    ],
+    "haiku": {
+      "lines": [
+        "竹の子の",
+        "兄よ弟よ",
+        "老ぬ"
+      ],
+      "reading": "たけのこの あによおとうとよ おいぬ",
+      "translation": "Bamboo shoots — / big brother, little brother / how old you've grown",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": "pastel-blue",
+    "effect": "starlight"
+  },
+  {
+    "char": "竹",
+    "readings": {
+      "on": [
+        "チク"
+      ],
+      "kun": [
+        "たけ"
+      ]
+    },
+    "meaning": "bamboo",
+    "keyword": "bamboo",
+    "keywords": [
+      "bamboo",
+      "take"
+    ],
+    "haiku": {
+      "lines": [
+        "竹の子の",
+        "兄よ弟よ",
+        "老ぬ"
+      ],
+      "reading": "たけのこの あによおとうとよ おいぬ",
+      "translation": "Bamboo shoots — / big brother, little brother / how old you've grown",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": "green",
+    "effect": "grass"
+  },
+  {
+    "char": "老",
+    "readings": {
+      "on": [
+        "ロウ"
+      ],
+      "kun": [
+        "お",
+        "ふ"
+      ]
+    },
+    "meaning": "old, aged; to grow old",
+    "keyword": "old",
+    "keywords": [
+      "old",
+      "aged",
+      "elder",
+      "aging"
+    ],
+    "haiku": {
+      "lines": [
+        "竹の子の",
+        "兄よ弟よ",
+        "老ぬ"
+      ],
+      "reading": "たけのこの あによおとうとよ おいぬ",
+      "translation": "Bamboo shoots — / big brother, little brother / how old you've grown",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": null,
+    "effect": null
+  },
+  {
+    "char": "鶴",
+    "readings": {
+      "on": [
+        "カク"
+      ],
+      "kun": [
+        "つる"
+      ]
+    },
+    "meaning": "crane; longevity and elegance in folklore",
+    "keyword": "crane",
+    "keywords": [
+      "crane",
+      "tsuru"
+    ],
+    "haiku": {
+      "lines": [
+        "千年も",
+        "けふ一日か",
+        "鶴のなく"
+      ],
+      "reading": "せんねんも きょういちにちか つるのなく",
+      "translation": "A thousand years — / or only this one day? / a crane is calling",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": "pastel-blue",
+    "effect": "starlight"
+  },
+  {
+    "char": "千",
+    "readings": {
+      "on": [
+        "セン"
+      ],
+      "kun": [
+        "ち"
+      ]
+    },
+    "meaning": "thousand",
+    "keyword": "thousand",
+    "keywords": [
+      "thousand",
+      "milliard"
+    ],
+    "haiku": {
+      "lines": [
+        "千年も",
+        "けふ一日か",
+        "鶴のなく"
+      ],
+      "reading": "せんねんも きょういちにちか つるのなく",
+      "translation": "A thousand years — / or only this one day? / a crane is calling",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": null,
+    "effect": null
+  },
+  {
+    "char": "年",
+    "readings": {
+      "on": [
+        "ネン"
+      ],
+      "kun": [
+        "とし"
+      ]
+    },
+    "meaning": "year; age, harvest year",
+    "keyword": "year",
+    "keywords": [
+      "year",
+      "age",
+      "toshi"
+    ],
+    "haiku": {
+      "lines": [
+        "千年も",
+        "けふ一日か",
+        "鶴のなく"
+      ],
+      "reading": "せんねんも きょういちにちか つるのなく",
+      "translation": "A thousand years — / or only this one day? / a crane is calling",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": null,
+    "effect": null
+  },
+  {
+    "char": "僧",
+    "readings": {
+      "on": [
+        "ソウ"
+      ],
+      "kun": []
+    },
+    "meaning": "monk, priest; one who has taken vows",
+    "keyword": "monk",
+    "keywords": [
+      "monk",
+      "priest",
+      "bonze"
+    ],
+    "haiku": {
+      "lines": [
+        "僧になる",
+        "子のうつくしや",
+        "けしの花"
+      ],
+      "reading": "そうになる このうつくしや けしのはな",
+      "translation": "the boy-turned-monk / has a beauty… / a poppy",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": "purple",
+    "effect": "starlight"
+  },
+  {
+    "char": "今",
+    "readings": {
+      "on": [
+        "コン",
+        "キン"
+      ],
+      "kun": [
+        "いま"
+      ]
+    },
+    "meaning": "now, the present moment",
+    "keyword": "now",
+    "keywords": [
+      "now",
+      "present"
+    ],
+    "haiku": {
+      "lines": [
+        "ちる花や",
+        "今の小町が",
+        "尻の跡"
+      ],
+      "reading": "ちるはなや いまのこまちが しりのあと",
+      "translation": "fallen blossoms — / a beauty leaves / her butt print",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": null,
+    "effect": null
+  },
+  {
+    "char": "小",
+    "readings": {
+      "on": [
+        "ショウ"
+      ],
+      "kun": [
+        "ちい",
+        "こ",
+        "お"
+      ]
+    },
+    "meaning": "small, little",
+    "keyword": "small",
+    "keywords": [
+      "small",
+      "little"
+    ],
+    "haiku": {
+      "lines": [
+        "ちる花や",
+        "今の小町が",
+        "尻の跡"
+      ],
+      "reading": "ちるはなや いまのこまちが しりのあと",
+      "translation": "fallen blossoms — / a beauty leaves / her butt print",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": null,
+    "effect": null
+  },
+  {
+    "char": "町",
+    "readings": {
+      "on": [
+        "チョウ"
+      ],
+      "kun": [
+        "まち"
+      ]
+    },
+    "meaning": "town, street, neighborhood",
+    "keyword": "town",
+    "keywords": [
+      "town",
+      "street",
+      "machi"
+    ],
+    "haiku": {
+      "lines": [
+        "ちる花や",
+        "今の小町が",
+        "尻の跡"
+      ],
+      "reading": "ちるはなや いまのこまちが しりのあと",
+      "translation": "fallen blossoms — / a beauty leaves / her butt print",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": "orange",
+    "effect": "embers"
+  },
+  {
+    "char": "尻",
+    "readings": {
+      "on": [
+        "コウ"
+      ],
+      "kun": [
+        "しり"
+      ]
+    },
+    "meaning": "buttocks, bottom, rear end",
+    "keyword": "butt",
+    "keywords": [
+      "butt",
+      "bottom",
+      "rear"
+    ],
+    "haiku": {
+      "lines": [
+        "ちる花や",
+        "今の小町が",
+        "尻の跡"
+      ],
+      "reading": "ちるはなや いまのこまちが しりのあと",
+      "translation": "fallen blossoms — / a beauty leaves / her butt print",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": null,
+    "effect": null
+  },
+  {
+    "char": "懐",
+    "readings": {
+      "on": [
+        "カイ",
+        "エ"
+      ],
+      "kun": [
+        "ふところ",
+        "なつ"
+      ]
+    },
+    "meaning": "bosom, chest, the fold of a robe",
+    "keyword": "bosom",
+    "keywords": [
+      "bosom",
+      "chest",
+      "pocket"
+    ],
+    "haiku": {
+      "lines": [
+        "懐を",
+        "通り抜たる",
+        "蛍かな"
+      ],
+      "reading": "ふところを とおりぬけたる ほたるかな",
+      "translation": "taking a shortcut / across my chest… / firefly",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": null,
+    "effect": null
+  },
+  {
+    "char": "通",
+    "readings": {
+      "on": [
+        "ツウ",
+        "ツ"
+      ],
+      "kun": [
+        "とお",
+        "かよ"
+      ]
+    },
+    "meaning": "pass through, go along",
+    "keyword": "through",
+    "keywords": [
+      "through",
+      "pass",
+      "commute",
+      "along"
+    ],
+    "haiku": {
+      "lines": [
+        "懐を",
+        "通り抜たる",
+        "蛍かな"
+      ],
+      "reading": "ふところを とおりぬけたる ほたるかな",
+      "translation": "taking a shortcut / across my chest… / firefly",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": null,
+    "effect": null
+  },
+  {
+    "char": "抜",
+    "readings": {
+      "on": [
+        "バツ",
+        "ハツ"
+      ],
+      "kun": [
+        "ぬ"
+      ]
+    },
+    "meaning": "pull out, slip through, omit",
+    "keyword": "slip",
+    "keywords": [
+      "slip",
+      "extract",
+      "pull"
+    ],
+    "haiku": {
+      "lines": [
+        "懐を",
+        "通り抜たる",
+        "蛍かな"
+      ],
+      "reading": "ふところを とおりぬけたる ほたるかな",
+      "translation": "taking a shortcut / across my chest… / firefly",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": null,
+    "effect": null
+  },
+  {
+    "char": "蛍",
+    "readings": {
+      "on": [
+        "ケイ"
+      ],
+      "kun": [
+        "ほたる"
+      ]
+    },
+    "meaning": "firefly, glow-worm",
+    "keyword": "firefly",
+    "keywords": [
+      "firefly",
+      "hotaru",
+      "lightning-bug"
+    ],
+    "haiku": {
+      "lines": [
+        "懐を",
+        "通り抜たる",
+        "蛍かな"
+      ],
+      "reading": "ふところを とおりぬけたる ほたるかな",
+      "translation": "taking a shortcut / across my chest… / firefly",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": "yellow",
+    "effect": "sunrays"
+  },
+  {
+    "char": "片",
+    "readings": {
+      "on": [
+        "ヘン"
+      ],
+      "kun": [
+        "かた"
+      ]
+    },
+    "meaning": "one side, fragment, incomplete",
+    "keyword": "one-side",
+    "keywords": [
+      "one-side",
+      "fragment",
+      "piece"
+    ],
+    "haiku": {
+      "lines": [
+        "片乳を",
+        "握りながらや",
+        "はつ笑ひ"
+      ],
+      "reading": "かたちちを にぎりながらや はつわらい",
+      "translation": "while grasping / mama's breast… / the year's first laughter",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": null,
+    "effect": null
+  },
+  {
+    "char": "乳",
+    "readings": {
+      "on": [
+        "ニュウ"
+      ],
+      "kun": [
+        "ちち",
+        "ち"
+      ]
+    },
+    "meaning": "breast, milk",
+    "keyword": "breast",
+    "keywords": [
+      "breast",
+      "milk"
+    ],
+    "haiku": {
+      "lines": [
+        "片乳を",
+        "握りながらや",
+        "はつ笑ひ"
+      ],
+      "reading": "かたちちを にぎりながらや はつわらい",
+      "translation": "while grasping / mama's breast… / the year's first laughter",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": "pastel-red",
+    "effect": "sakura"
+  },
+  {
+    "char": "握",
+    "readings": {
+      "on": [
+        "アク"
+      ],
+      "kun": [
+        "にぎ"
+      ]
+    },
+    "meaning": "grasp, grip, squeeze",
+    "keyword": "grasp",
+    "keywords": [
+      "grasp",
+      "grip",
+      "hold"
+    ],
+    "haiku": {
+      "lines": [
+        "片乳を",
+        "握りながらや",
+        "はつ笑ひ"
+      ],
+      "reading": "かたちちを にぎりながらや はつわらい",
+      "translation": "while grasping / mama's breast… / the year's first laughter",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": null,
+    "effect": null
+  },
+  {
+    "char": "笑",
+    "readings": {
+      "on": [
+        "ショウ"
+      ],
+      "kun": [
+        "わら",
+        "え"
+      ]
+    },
+    "meaning": "laugh, smile",
+    "keyword": "laugh",
+    "keywords": [
+      "laugh",
+      "smile"
+    ],
+    "haiku": {
+      "lines": [
+        "片乳を",
+        "握りながらや",
+        "はつ笑ひ"
+      ],
+      "reading": "かたちちを にぎりながらや はつわらい",
+      "translation": "while grasping / mama's breast… / the year's first laughter",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": "pastel-yellow",
+    "effect": "sakura"
+  },
+  {
+    "char": "我",
+    "readings": {
+      "on": [
+        "ガ"
+      ],
+      "kun": [
+        "われ",
+        "わ"
+      ]
+    },
+    "meaning": "I, self, ego",
+    "keyword": "self",
+    "keywords": [
+      "self",
+      "I",
+      "ego"
+    ],
+    "haiku": {
+      "lines": [
+        "我門の",
+        "餅恋鴨の",
+        "鳴きにけり"
+      ],
+      "reading": "わがかどの もちこいかもの なきにけり",
+      "translation": "at my gate rice cakes — / lover ducks / quacking",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": null,
+    "effect": null
+  },
+  {
+    "char": "餅",
+    "readings": {
+      "on": [
+        "ヘイ",
+        "ヒョウ"
+      ],
+      "kun": [
+        "もち"
+      ]
+    },
+    "meaning": "mochi, rice cake",
+    "keyword": "ricecake",
+    "keywords": [
+      "ricecake",
+      "mochi"
+    ],
+    "haiku": {
+      "lines": [
+        "我門の",
+        "餅恋鴨の",
+        "鳴きにけり"
+      ],
+      "reading": "わがかどの もちこいかもの なきにけり",
+      "translation": "at my gate rice cakes — / lover ducks / quacking",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": "pastel-yellow",
+    "effect": "embers"
+  },
+  {
+    "char": "鴨",
+    "readings": {
+      "on": [
+        "オウ"
+      ],
+      "kun": [
+        "かも"
+      ]
+    },
+    "meaning": "duck",
+    "keyword": "duck",
+    "keywords": [
+      "duck",
+      "kamo"
+    ],
+    "haiku": {
+      "lines": [
+        "我門の",
+        "餅恋鴨の",
+        "鳴きにけり"
+      ],
+      "reading": "わがかどの もちこいかもの なきにけり",
+      "translation": "at my gate rice cakes — / lover ducks / quacking",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": "green",
+    "effect": "grass"
+  },
+  {
+    "char": "鳴",
+    "readings": {
+      "on": [
+        "メイ"
+      ],
+      "kun": [
+        "な"
+      ]
+    },
+    "meaning": "cry, chirp, call (of birds)",
+    "keyword": "cry",
+    "keywords": [
+      "cry",
+      "chirp",
+      "sing"
+    ],
+    "haiku": {
+      "lines": [
+        "我門の",
+        "餅恋鴨の",
+        "鳴きにけり"
+      ],
+      "reading": "わがかどの もちこいかもの なきにけり",
+      "translation": "at my gate rice cakes — / lover ducks / quacking",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": null,
+    "effect": null
+  },
+  {
+    "char": "姫",
+    "readings": {
+      "on": [
+        "キ"
+      ],
+      "kun": [
+        "ひめ"
+      ]
+    },
+    "meaning": "princess, young lady",
+    "keyword": "princess",
+    "keywords": [
+      "princess",
+      "hime"
+    ],
+    "haiku": {
+      "lines": [
+        "一姫の",
+        "神笑み給へ",
+        "草のてふ"
+      ],
+      "reading": "いちひめの かみえみたまえ くさのちょう",
+      "translation": "O goddess Ichihime / smile! / a meadow butterfly",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": "pastel-red",
+    "effect": "sakura"
+  },
+  {
+    "char": "神",
+    "readings": {
+      "on": [
+        "シン",
+        "ジン"
+      ],
+      "kun": [
+        "かみ",
+        "かん"
+      ]
+    },
+    "meaning": "god, spirit, divinity",
+    "keyword": "god",
+    "keywords": [
+      "god",
+      "spirit",
+      "kami"
+    ],
+    "haiku": {
+      "lines": [
+        "一姫の",
+        "神笑み給へ",
+        "草のてふ"
+      ],
+      "reading": "いちひめの かみえみたまえ くさのちょう",
+      "translation": "O goddess Ichihime / smile! / a meadow butterfly",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": "purple",
+    "effect": "starlight"
+  },
+  {
+    "char": "給",
+    "readings": {
+      "on": [
+        "キュウ"
+      ],
+      "kun": [
+        "たま",
+        "たも"
+      ]
+    },
+    "meaning": "bestow, grant; honorific auxiliary",
+    "keyword": "bestow",
+    "keywords": [
+      "bestow",
+      "grant",
+      "honorific"
+    ],
+    "haiku": {
+      "lines": [
+        "一姫の",
+        "神笑み給へ",
+        "草のてふ"
+      ],
+      "reading": "いちひめの かみえみたまえ くさのちょう",
+      "translation": "O goddess Ichihime / smile! / a meadow butterfly",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": null,
+    "effect": null
+  },
+  {
+    "char": "御",
+    "readings": {
+      "on": [
+        "ギョ",
+        "ゴ"
+      ],
+      "kun": [
+        "おん",
+        "お",
+        "み"
+      ]
+    },
+    "meaning": "honorific prefix; august, imperial",
+    "keyword": "honorific",
+    "keywords": [
+      "honorific",
+      "imperial",
+      "august"
+    ],
+    "haiku": {
+      "lines": [
+        "御馬の",
+        "屁ながれけり",
+        "萩の花"
+      ],
+      "reading": "おうまの へながれけり はぎのはな",
+      "translation": "Sir Horse's fart / wafting over… / blooming bush clover",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": null,
+    "effect": null
+  },
+  {
+    "char": "屁",
+    "readings": {
+      "on": [
+        "ヒ"
+      ],
+      "kun": [
+        "へ"
+      ]
+    },
+    "meaning": "fart, flatulence",
+    "keyword": "fart",
+    "keywords": [
+      "fart",
+      "gas"
+    ],
+    "haiku": {
+      "lines": [
+        "御馬の",
+        "屁ながれけり",
+        "萩の花"
+      ],
+      "reading": "おうまの へながれけり はぎのはな",
+      "translation": "Sir Horse's fart / wafting over… / blooming bush clover",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": "pastel-yellow",
+    "effect": null
+  },
+  {
+    "char": "萩",
+    "readings": {
+      "on": [
+        "シュウ"
+      ],
+      "kun": [
+        "はぎ"
+      ]
+    },
+    "meaning": "bush clover, hagi",
+    "keyword": "clover",
+    "keywords": [
+      "clover",
+      "bush-clover",
+      "hagi"
+    ],
+    "haiku": {
+      "lines": [
+        "御馬の",
+        "屁ながれけり",
+        "萩の花"
+      ],
+      "reading": "おうまの へながれけり はぎのはな",
+      "translation": "Sir Horse's fart / wafting over… / blooming bush clover",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": "pastel-purple",
+    "effect": "sakura"
+  },
+  {
+    "char": "茸",
+    "readings": {
+      "on": [
+        "ジョウ"
+      ],
+      "kun": [
+        "きのこ",
+        "たけ"
+      ]
+    },
+    "meaning": "mushroom, fungus",
+    "keyword": "mushroom",
+    "keywords": [
+      "mushroom",
+      "fungus",
+      "kinoko"
+    ],
+    "haiku": {
+      "lines": [
+        "茸とり",
+        "刀で分ける",
+        "芒かな"
+      ],
+      "reading": "きのことり かたなでわける すすきかな",
+      "translation": "mushroom gathering — / his sword splits / plume grass",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": "pastel-green",
+    "effect": "grass"
+  },
+  {
+    "char": "刀",
+    "readings": {
+      "on": [
+        "トウ"
+      ],
+      "kun": [
+        "かたな",
+        "そり"
+      ]
+    },
+    "meaning": "sword, blade, knife",
+    "keyword": "sword",
+    "keywords": [
+      "sword",
+      "katana",
+      "blade"
+    ],
+    "haiku": {
+      "lines": [
+        "茸とり",
+        "刀で分ける",
+        "芒かな"
+      ],
+      "reading": "きのことり かたなでわける すすきかな",
+      "translation": "mushroom gathering — / his sword splits / plume grass",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": "red",
+    "effect": "embers"
+  },
+  {
+    "char": "芒",
+    "readings": {
+      "on": [
+        "ボウ"
+      ],
+      "kun": [
+        "のぎ",
+        "すすき"
+      ]
+    },
+    "meaning": "plume grass, susuki",
+    "keyword": "plumegrass",
+    "keywords": [
+      "plumegrass",
+      "susuki",
+      "pampas"
+    ],
+    "haiku": {
+      "lines": [
+        "茸とり",
+        "刀で分ける",
+        "芒かな"
+      ],
+      "reading": "きのことり かたなでわける すすきかな",
+      "translation": "mushroom gathering — / his sword splits / plume grass",
+      "author": "小林一茶",
+      "author_en": "Kobayashi Issa"
+    },
+    "color": "green",
+    "effect": "grass"
+  }
+]

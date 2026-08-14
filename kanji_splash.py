@@ -25,6 +25,12 @@ from PIL import Image, ImageDraw, ImageFont
 SCRIPT_DIR = Path(__file__).resolve().parent
 DEFAULT_DATA = SCRIPT_DIR / "kanji.json"
 
+# Persistent progress (garden unlock, game stats)
+def _progress_path() -> Path:
+    xdg = os.environ.get("XDG_DATA_HOME")
+    base = Path(xdg) if xdg else Path.home() / ".local" / "share"
+    return base / "kanji-splash" / "progress.json"
+
 # Prefer clean Japanese faces; fall back through a short list.
 FONT_CANDIDATES = [
     "/usr/share/fonts/opentype/ipafont-mincho/ipam.ttf",
@@ -313,6 +319,7 @@ class C:
     CYAN = "\033[36m"
     WHITE = "\033[37m"
     BRIGHT_RED = "\033[91m"
+    BRIGHT_GREEN = "\033[92m"
     BRIGHT_YELLOW = "\033[93m"
     BRIGHT_CYAN = "\033[96m"
     BRIGHT_WHITE = "\033[97m"
@@ -346,16 +353,137 @@ KEY_LIST = "l"
 KEY_DAILY = "d"
 KEY_FX = "a"      # cycle animation effect
 KEY_COLOR = "c"   # cycle kanji ink color
+KEY_GARDEN = "g"  # secret garden (after unlock)
 KEY_QUIT = "q"
 
+# Session keys accepted while splash is live (garden only if unlocked)
+_BASE_KEYS = frozenset({KEY_NEW, KEY_LIST, KEY_DAILY, KEY_FX, KEY_COLOR, KEY_QUIT})
 
-def shortcuts_footer() -> str:
-    """Keyboard shortcut legend for the panel footer."""
-    return (
-        f"({KEY_NEW}) new  ·  ({KEY_LIST}) list  ·  "
-        f"({KEY_DAILY}) daily  ·  ({KEY_FX}) anim  ·  "
-        f"({KEY_COLOR}) color  ·  ({KEY_QUIT}) quit"
+
+def load_progress() -> dict:
+    """Load game stats from XDG data dir (garden unlock is session-only)."""
+    path = _progress_path()
+    default: dict = {
+        "janken": {"wins": 0, "losses": 0, "draws": 0},
+        "goita": {"wins": 0, "losses": 0, "hands": 0},
+    }
+    try:
+        if path.is_file():
+            data = json.loads(path.read_text(encoding="utf-8"))
+            if isinstance(data, dict):
+                out = {**default, **data}
+                for game in ("janken", "goita"):
+                    j = out.get(game) or {}
+                    if game == "janken":
+                        out[game] = {
+                            "wins": int(j.get("wins", 0)),
+                            "losses": int(j.get("losses", 0)),
+                            "draws": int(j.get("draws", 0)),
+                        }
+                    else:
+                        out[game] = {
+                            "wins": int(j.get("wins", 0)),
+                            "losses": int(j.get("losses", 0)),
+                            "hands": int(j.get("hands", 0)),
+                        }
+                # legacy unlock fields ignored — garden is session-only
+                out.pop("garden_unlocked", None)
+                out.pop("seen_effects", None)
+                out.pop("seen_colors", None)
+                return out
+    except (OSError, json.JSONDecodeError, TypeError, ValueError):
+        pass
+    return default
+
+
+def save_progress(progress: dict) -> None:
+    """Write progress atomically-ish (best effort)."""
+    path = _progress_path()
+    try:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        # never persist garden unlock — discovery should replay each session
+        to_save = {
+            k: v
+            for k, v in progress.items()
+            if k
+            not in (
+                "garden_unlocked",
+                "seen_effects",
+                "seen_colors",
+                "daily_presses",
+                "unlock_pending",
+                "unlock_played",
+            )
+        }
+        tmp = path.with_suffix(".tmp")
+        tmp.write_text(
+            json.dumps(to_save, indent=2, ensure_ascii=False) + "\n",
+            encoding="utf-8",
+        )
+        tmp.replace(path)
+    except OSError:
+        pass
+
+
+def new_session() -> dict:
+    """
+    Per-run garden state. Unlock is never saved to disk so the reveal
+    can play again next time.
+    """
+    return {
+        "garden_unlocked": False,
+        "daily_presses": 0,
+        "unlock_pending": False,
+        "unlock_played": False,
+    }
+
+
+def register_daily_press(session: dict) -> None:
+    """
+    Count a (d) daily keypress. On the third press in this session, queue
+    the garden unlock reveal for the next full splash draw.
+    """
+    session["daily_presses"] = int(session.get("daily_presses", 0)) + 1
+    if session["daily_presses"] >= 3 and not session.get("unlock_played"):
+        session["unlock_pending"] = True
+
+
+def request_garden_unlock(session: dict) -> None:
+    """Queue the garden reveal if it has not played yet this session."""
+    if not session.get("unlock_played"):
+        session["unlock_pending"] = True
+
+
+def garden_list_hint() -> str:
+    """
+    List footer riddle: three 'd's grow brighter — press (d) daily three times.
+    """
+    # day after day after day, I've been searching for the secret garden
+    d1 = C.paint("d", C.DIM)
+    d2 = C.paint("d", C.WHITE)
+    d3 = C.paint("d", C.BOLD, C.BRIGHT_CYAN)
+    ay = C.paint("ay", C.DIM)
+    after = C.paint(" after ", C.DIM)
+    rest = C.paint(
+        ", I've been searching for the secret garden",
+        C.DIM,
     )
+    return d1 + ay + after + d2 + ay + after + d3 + ay + rest
+
+
+def shortcuts_footer(*, garden_unlocked: bool = False) -> str:
+    """Keyboard shortcut legend for the panel footer."""
+    bits = [
+        f"({KEY_NEW}) new",
+        f"({KEY_LIST}) list",
+        f"({KEY_DAILY}) daily",
+        f"({KEY_FX}) anim",
+        f"({KEY_COLOR}) color",
+    ]
+    if garden_unlocked:
+        bits.append(f"({KEY_GARDEN}) garden")
+    bits.append(f"({KEY_QUIT}) quit")
+    return "  ·  ".join(bits)
 
 
 def next_color(name: str) -> str:
@@ -1589,18 +1717,25 @@ def format_haiku_rows(entry: dict) -> list[tuple[str, str]]:
 def typewriter_take(
     rows: list[tuple[str, str]],
     n: int,
+    *,
+    pad: bool = False,
 ) -> list[tuple[str, str]]:
     """
     Reveal the first n plain characters across rows (typewriter).
     Empty rows count as 1 character so blank lines still pace the reveal.
+
+    pad=True — always return len(rows) lines; unrevealed rows are ("","")
+    placeholders so vertical layout (and the kanji below) never shifts.
     """
     if n < 0:
-        return []
+        n = 0
     out: list[tuple[str, str]] = []
     left = n
     for plain, colored in rows:
         if left <= 0:
-            break
+            if pad:
+                out.append(("", ""))
+            continue
         if plain == "":
             out.append(("", ""))
             left -= 1
@@ -1613,7 +1748,9 @@ def typewriter_take(
             # Partial line: simple paint (full highlight would need re-split)
             out.append((partial, C.paint(partial, C.BRIGHT_WHITE)))
             left = 0
-            break
+            # remaining rows (if pad) filled below on next iterations
+    if pad and len(out) < len(rows):
+        out.extend(("", "") for _ in range(len(rows) - len(out)))
     return out
 
 
@@ -1717,10 +1854,14 @@ def build_text_rows(
     effect_name: str | None = None,
     ink_color: str | None = None,
     status_hint: str | None = None,
+    garden_unlocked: bool = False,
 ) -> list[tuple[str, str]]:
     """
-    All chrome text around the glyph as (plain, colored) rows, in typewriter order:
-    title → rule → meaning → haiku → rule → effect · color → shortcuts.
+    All chrome text around the glyph as (plain, colored) rows:
+    title → rule → meaning → __ART__ → haiku → rule → effect · color → shortcuts.
+
+    Typewriter only animates *below* the glyph so header lines never shove
+    the kanji downward as they appear.
     """
     rule = "─" * min(term_width(), max(art_w + 4, 48))
     title = "◆  今日の漢字  ·  kanji splash  ◆"
@@ -1751,9 +1892,25 @@ def build_text_rows(
     if effect_line:
         rows.append((effect_line, C.paint(effect_line, C.BOLD, C.BRIGHT_CYAN)))
 
-    shortcuts = shortcuts_footer()
-    rows.append((shortcuts, C.paint(shortcuts, C.WHITE)))
+    shortcuts = shortcuts_footer(garden_unlocked=garden_unlocked)
+    if garden_unlocked:
+        rows.append((shortcuts, _paint_shortcuts_with_garden(shortcuts)))
+    else:
+        rows.append((shortcuts, C.paint(shortcuts, C.WHITE)))
     return rows
+
+
+def _paint_shortcuts_with_garden(shortcuts: str) -> str:
+    """Highlight (g) garden in the footer; rest stays white."""
+    token = f"({KEY_GARDEN}) garden"
+    if token not in shortcuts:
+        return C.paint(shortcuts, C.WHITE)
+    pre, _, post = shortcuts.partition(token)
+    return (
+        C.paint(pre, C.WHITE)
+        + C.paint(token, C.BOLD, C.BRIGHT_GREEN)
+        + C.paint(post, C.WHITE)
+    )
 
 
 def build_panel(
@@ -1774,13 +1931,16 @@ def build_panel(
     ink_color: str | None = None,
     status_hint: str | None = None,
     typewriter_chars: int | None = None,
+    garden_unlocked: bool = False,
 ) -> str:
     """
     Compose the splash panel.
 
-    fade — only affects the kanji glyph density/brightness.
-    typewriter_chars — if set, reveal that many text characters (None = full text).
-    show_details=False — glyph + no text (intro fade phase).
+    fade - only affects the kanji glyph density/brightness.
+    typewriter_chars - if set, reveal that many chrome characters in order
+      (title -> meaning -> haiku -> footer). Unrevealed lines stay as blank
+      placeholders so the kanji never shifts vertically.
+    show_details=False - glyph fade-in; blank header placeholders hold layout.
     """
     width = term_width()
     faded = apply_fade(art_lines, ramp, fade)
@@ -1826,38 +1986,41 @@ def build_panel(
     parts: list[str] = []
     parts.append("")
 
-    if not show_details and typewriter_chars is None:
-        # Glyph-only (fade-in phase): keep vertical room calm
-        for line, _raw in zip(art, faded):
-            parts.append(art_pad_s + line)
-        parts.append("")
-        return "\n".join(parts)
-
     text_rows = build_text_rows(
         entry,
         art_w=art_w,
         effect_name=effect_name,
         ink_color=ink_color,
         status_hint=status_hint,
+        garden_unlocked=garden_unlocked,
     )
-
-    # Split around art placeholder
     try:
         art_idx = next(i for i, (p, _) in enumerate(text_rows) if p == "__ART__")
     except StopIteration:
         art_idx = len(text_rows)
-
     pre_rows = text_rows[:art_idx]
     post_rows = text_rows[art_idx + 1 :]
 
-    # Typewriter reveals chrome only; glyph is already fully faded in
+    if not show_details and typewriter_chars is None:
+        # Glyph fade-in: reserve header lines so the kanji does not jump later.
+        for _ in pre_rows:
+            parts.append("")
+        for line, _raw in zip(art, faded):
+            parts.append(art_pad_s + line)
+        parts.append("")
+        return "\n".join(parts)
+
+    # Typewriter: reveal in order, but keep full pre/post row counts as blanks
     if typewriter_chars is not None:
         pre_budget = text_typewriter_budget(pre_rows)
         if typewriter_chars < pre_budget:
-            pre_rows = typewriter_take(pre_rows, typewriter_chars)
-            post_rows = []
+            pre_rows = typewriter_take(pre_rows, typewriter_chars, pad=True)
+            post_rows = typewriter_take(post_rows, 0, pad=True)
         else:
-            post_rows = typewriter_take(post_rows, typewriter_chars - pre_budget)
+            pre_rows = typewriter_take(pre_rows, pre_budget, pad=True)
+            post_rows = typewriter_take(
+                post_rows, typewriter_chars - pre_budget, pad=True
+            )
 
     for plain, colored in pre_rows:
         parts.append(center_ansi(plain, colored if colored else plain))
@@ -1872,12 +2035,21 @@ def build_panel(
     return "\n".join(parts)
 
 
-def count_typewriter_chars(entry: dict, *, effect_name: str | None, ink_color: str | None) -> int:
-    """Full typewriter length for chrome text (excluding the glyph)."""
+def count_typewriter_chars(
+    entry: dict,
+    *,
+    effect_name: str | None,
+    ink_color: str | None,
+    garden_unlocked: bool = False,
+) -> int:
+    """Full typewriter length for all chrome (header + haiku/footer)."""
     rows = build_text_rows(
-        entry, art_w=40, effect_name=effect_name, ink_color=ink_color
+        entry,
+        art_w=40,
+        effect_name=effect_name,
+        ink_color=ink_color,
+        garden_unlocked=garden_unlocked,
     )
-    # Exclude art placeholder from budget
     rows = [(p, c) for p, c in rows if p != "__ART__"]
     return text_typewriter_budget(rows)
 
@@ -1923,32 +2095,42 @@ def _read_raw_key() -> str:
         return ""
 
 
-def normalize_action(key: str) -> str:
+def normalize_action(key: str, *, garden_unlocked: bool = False) -> str:
     """
-    Map a raw key to an action: n / l / d / a / q.
-    Unknown keys become q (dismiss / quit).
+    Map a raw key to an action: n / l / d / a / c / g / q.
+
+    `g` is always recognized: while locked it requests unlock; once unlocked
+    it opens the garden. (garden_unlocked kept for call-site clarity.)
     """
+    del garden_unlocked  # g is always a real action now
     if not key:
         return KEY_QUIT
     k = key.lower()
-    if k in (KEY_NEW, KEY_LIST, KEY_DAILY, KEY_FX, KEY_COLOR, KEY_QUIT):
+    allowed = set(_BASE_KEYS) | {KEY_GARDEN}
+    if k in allowed:
         return k
     if key in ("\x03", "\x04"):  # Ctrl-C / Ctrl-D
         return KEY_QUIT
     return KEY_QUIT
 
 
-def wait_for_action(*, timeout: float | None = None) -> str:
-    """Block until a key (or timeout → quit). Returns n/l/d/a/q."""
+def wait_for_action(
+    *, timeout: float | None = None, garden_unlocked: bool = False
+) -> str:
+    """Block until a key (or timeout → quit). Returns n/l/d/a/c/g/q."""
     if not sys.stdin.isatty():
         return KEY_QUIT
     if timeout is None:
         while True:
             if _stdin_key_waiting(0.25):
-                return normalize_action(_read_raw_key())
+                return normalize_action(
+                    _read_raw_key(), garden_unlocked=garden_unlocked
+                )
     else:
         if _stdin_key_waiting(timeout):
-            return normalize_action(_read_raw_key())
+            return normalize_action(
+                _read_raw_key(), garden_unlocked=garden_unlocked
+            )
         return KEY_QUIT
 
 
@@ -1967,17 +2149,23 @@ def animate_display(
     wait_after: bool = True,
     effect: str = DEFAULT_EFFECT,
     ink_color: str = DEFAULT_COLOR,
+    session: dict | None = None,
 ) -> tuple[str, str, str]:
     """
     Fade the glyph in, then hold with the active animation effect.
 
     Returns (action, effect, ink_color).
     Toggle effect with 'a', ink color with 'c'.
+    If session['unlock_pending'], play the garden reveal only after the
+    full splash (fade + typewriter) has finished drawing.
     """
     if effect not in EFFECTS:
         effect = DEFAULT_EFFECT
     if ink_color not in COLOR_PALETTES:
         ink_color = DEFAULT_COLOR
+    if session is None:
+        session = new_session()
+    garden_unlocked = bool(session.get("garden_unlocked"))
 
     # Room on all sides so starlight can wrap the full glyph (not just the top)
     canvas = pad_art(art_lines, top=3, bottom=3, left=5, right=5)
@@ -2015,6 +2203,7 @@ def animate_display(
             ink_color=ink_color,
             status_hint=status,
             typewriter_chars=None,
+            garden_unlocked=garden_unlocked,
         )
 
     def live_panel(
@@ -2023,6 +2212,7 @@ def animate_display(
         fade: float = 1.0,
         show_text: bool = True,
         typewriter_chars: int | None = None,
+        status: str | None = None,
     ) -> str:
         # Starlight: soft glyph breath; sunrays: tiny warm pulse
         if effect == "starlight":
@@ -2057,9 +2247,11 @@ def animate_display(
             effect_field=field if fade > 0.55 else None,
             breath=breath if fade > 0.4 else 1.0,
             body_grain=body_grain,
-            effect_name=effect,
-            ink_color=ink_color,
+            effect_name=effect if status is None else None,
+            ink_color=ink_color if status is None else None,
+            status_hint=status,
             typewriter_chars=typewriter_chars,
+            garden_unlocked=garden_unlocked,
         )
 
     def switch_effect() -> None:
@@ -2073,6 +2265,47 @@ def animate_display(
         nonlocal ink_color
         ink_color = next_color(ink_color)
 
+    def play_garden_unlock_reveal() -> None:
+        """Short moment when the secret path appears — then (g) garden shows."""
+        nonlocal garden_unlocked, field
+        garden_unlocked = True
+        session["garden_unlocked"] = True
+        session["unlock_played"] = True
+        session["unlock_pending"] = False
+        # Prefer a soft meadow feel for the reveal if grass is available
+        if effect != "grass":
+            # Don't permanently change the user's effect — temp field only
+            reveal_field = make_effect_field(
+                "grass", canvas=canvas, edges=edges, intensity=noise
+            )
+        else:
+            reveal_field = field
+        saved_field = field
+        field = reveal_field
+        beats = [
+            ("·   ·   ·", 0.28),
+            ("✦", 0.32),
+            ("✦  a path opens", 0.55),
+            ("✦  garden", 0.70),
+        ]
+        t0 = time.monotonic()
+        for msg, hold in beats:
+            end = time.monotonic() + hold
+            while time.monotonic() < end:
+                field.update(1.0 / SHIMMER_FPS)
+                elapsed = time.monotonic() - t0
+                draw(live_panel(elapsed, status=msg))
+                time.sleep(1.0 / SHIMMER_FPS)
+        # One beat with the new footer visible (status returns to effect · color)
+        end = time.monotonic() + 0.85
+        while time.monotonic() < end:
+            field.update(1.0 / SHIMMER_FPS)
+            draw(live_panel(time.monotonic() - t0))
+            time.sleep(1.0 / SHIMMER_FPS)
+        field = saved_field
+        if hasattr(field, "intensity"):
+            field.intensity = noise
+
     def handle_toggle(act: str) -> bool:
         """Return True if act was a live toggle (keep animating)."""
         if act == KEY_FX:
@@ -2083,8 +2316,26 @@ def animate_display(
             return True
         return False
 
+    def handle_garden_key() -> str | None:
+        """
+        First (g) while locked: unlock reveal, stay on splash.
+        Later (g): leave to open the garden.
+        Returns KEY_GARDEN to exit, or None to keep holding.
+        """
+        nonlocal garden_unlocked
+        if garden_unlocked or session.get("unlock_played"):
+            garden_unlocked = True
+            session["garden_unlocked"] = True
+            return KEY_GARDEN
+        # locked → unlock animation, then (g) is a normal shortcut
+        request_garden_unlock(session)
+        if session.get("unlock_pending") and not session.get("unlock_played"):
+            play_garden_unlock_reveal()
+            garden_unlocked = True
+        return None
+
     def run_hold(start_elapsed: float = 0.0) -> str | None:
-        """Phase 2: live effect loop. Returns n/l/d/q, or None if timed out."""
+        """Phase 2: live effect loop. Returns n/l/d/g/q, or None if timed out."""
         nonlocal field
         if not shimmer:
             return None
@@ -2101,9 +2352,16 @@ def animate_display(
             if _stdin_key_waiting(0.0):
                 raw = _read_raw_key()
                 if raw:
-                    act = normalize_action(raw)
+                    act = normalize_action(
+                        raw, garden_unlocked=garden_unlocked
+                    )
                     if handle_toggle(act):
                         continue
+                    if act == KEY_GARDEN:
+                        out = handle_garden_key()
+                        if out is None:
+                            continue
+                        return out
                     return act
 
             field.update(frame_dt)
@@ -2112,9 +2370,16 @@ def animate_display(
             if _stdin_key_waiting(frame_dt):
                 raw = _read_raw_key()
                 if raw:
-                    act = normalize_action(raw)
+                    act = normalize_action(
+                        raw, garden_unlocked=garden_unlocked
+                    )
                     if handle_toggle(act):
                         continue
+                    if act == KEY_GARDEN:
+                        out = handle_garden_key()
+                        if out is None:
+                            continue
+                        return out
                     return act
 
     sys.stdout.write(C.HIDE_CURSOR)
@@ -2142,26 +2407,32 @@ def animate_display(
             if _stdin_key_waiting(0.0):
                 raw = _read_raw_key()
                 if raw:
-                    act = normalize_action(raw)
+                    act = normalize_action(
+                        raw, garden_unlocked=garden_unlocked
+                    )
                     if handle_toggle(act):
-                        pass  # keep fading
+                        pass
                     else:
                         action = act
                         break
             time.sleep(delay)
 
-        # ── phase 1b: quick typewriter for title / meaning / haiku / footer
+        # ── phase 1b: typewriter for title / meaning / haiku / footer
+        # Header rows use blank placeholders until revealed (no vertical shunt).
+        tw_t0 = time.monotonic()
         if action is None:
             if hasattr(field, "intensity"):
                 field.intensity = noise
             total_tw = count_typewriter_chars(
-                entry, effect_name=effect, ink_color=ink_color
+                entry,
+                effect_name=effect,
+                ink_color=ink_color,
+                garden_unlocked=garden_unlocked,
             )
             # ~2–4 chars per tick for a snappy typewriter
-            tw_step = max(2, total_tw // 40)
+            tw_step = max(2, total_tw // 40) if total_tw else 1
             tw_delay = 0.018
             n = 0
-            tw_t0 = time.monotonic()
             while n < total_tw and action is None:
                 field.update(tw_delay)
                 elapsed = (time.monotonic() - tw_t0) + fade_seconds
@@ -2176,7 +2447,9 @@ def animate_display(
                 if _stdin_key_waiting(0.0):
                     raw = _read_raw_key()
                     if raw:
-                        act = normalize_action(raw)
+                        act = normalize_action(
+                            raw, garden_unlocked=garden_unlocked
+                        )
                         if handle_toggle(act):
                             # color/effect change mid-typewriter — keep going
                             pass
@@ -2185,17 +2458,31 @@ def animate_display(
                             break
                 n += tw_step
                 time.sleep(tw_delay)
-            # Ensure full text once
-            if action is None:
-                field.update(0.0)
-                draw(
-                    live_panel(
-                        time.monotonic() - tw_t0 + fade_seconds,
-                        fade=1.0,
-                        show_text=True,
-                        typewriter_chars=None,
-                    )
-                )
+
+        # Full chrome must be on screen before the garden reveal can start
+        if hasattr(field, "intensity"):
+            field.intensity = noise
+        field.update(0.0)
+        draw(
+            live_panel(
+                time.monotonic() - tw_t0 + fade_seconds,
+                fade=1.0,
+                show_text=True,
+                typewriter_chars=None,
+            )
+        )
+        already_unlocked = bool(
+            session.get("garden_unlocked") or session.get("unlock_played")
+        )
+        # Daily ×3 or (g) during intro — reveal only after full draw
+        if action == KEY_GARDEN and not already_unlocked:
+            request_garden_unlock(session)
+        if session.get("unlock_pending") and not session.get("unlock_played"):
+            play_garden_unlock_reveal()
+            garden_unlocked = True
+        # First (g) while locked only unlocks; a later (g) opens the garden
+        if action == KEY_GARDEN and not already_unlocked:
+            action = None
 
         # ── phase 2: live hold (re-enter if user toggles on still frame) ─
         while action is None:
@@ -2210,13 +2497,22 @@ def animate_display(
             if not wait_after or fd is None:
                 action = KEY_QUIT
                 break
-            act = wait_for_action()
+            act = wait_for_action(garden_unlocked=garden_unlocked)
             if handle_toggle(act):
                 # Resume live animation with new effect/color
                 action = None
                 if hasattr(field, "intensity"):
                     field.intensity = noise
                 continue
+            if act == KEY_GARDEN:
+                out = handle_garden_key()
+                if out is None:
+                    action = None
+                    if hasattr(field, "intensity"):
+                        field.intensity = noise
+                    continue
+                action = out
+                break
             action = act
             break
 
@@ -2239,7 +2535,262 @@ def animate_display(
             sys.stdout.flush()
 
 
-def list_entries(entries: list[dict]) -> None:
+def _games_dirs() -> list[Path]:
+    """
+    Directories scanned for optional garden games (never required for the splash).
+
+    Install a game by dropping or symlinking a .py module that defines GARDEN_GAME:
+      ~/.local/share/kanji-splash/games/<name>.py
+    Or, for pip packages later: entry point group kanji_splash.games.
+    """
+    xdg = os.environ.get("XDG_DATA_HOME")
+    base = Path(xdg) if xdg else Path.home() / ".local" / "share"
+    dirs = [
+        base / "kanji-splash" / "games",
+        SCRIPT_DIR / "games",  # optional local/dev only; not shipped in core tree
+    ]
+    # de-dupe while preserving order
+    seen: set[Path] = set()
+    out: list[Path] = []
+    for d in dirs:
+        try:
+            key = d.resolve()
+        except OSError:
+            key = d
+        if key not in seen:
+            seen.add(key)
+            out.append(d)
+    return out
+
+
+def discover_garden_games() -> list[dict]:
+    """
+    Load optional garden plugins. Core splash never depends on these existing.
+
+    Each game module must define:
+      GARDEN_GAME = {
+        "id": "janken",          # progress key namespace (optional)
+        "key": "j",              # single-char lobby shortcut
+        "title": "janken pon",
+        "title_ja": "じゃんけん",  # optional
+        "play": callable,        # play(progress: dict) -> Any
+      }
+    """
+    games: list[dict] = []
+    seen_ids: set[str] = set()
+    seen_keys: set[str] = set()
+
+    for gdir in _games_dirs():
+        if not gdir.is_dir():
+            continue
+        for path in sorted(gdir.glob("*.py")):
+            if path.name.startswith("_"):
+                continue
+            mod = _load_game_module(path)
+            if mod is None:
+                continue
+            meta = getattr(mod, "GARDEN_GAME", None)
+            if not isinstance(meta, dict):
+                continue
+            play_fn = meta.get("play")
+            key = str(meta.get("key") or "").lower()[:1]
+            gid = str(meta.get("id") or path.stem)
+            title = str(meta.get("title") or gid)
+            if not key or not callable(play_fn):
+                continue
+            if key in ("b", "q") or key in seen_keys or gid in seen_ids:
+                continue
+            seen_keys.add(key)
+            seen_ids.add(gid)
+            games.append(
+                {
+                    "id": gid,
+                    "key": key,
+                    "title": title,
+                    "title_ja": str(meta.get("title_ja") or ""),
+                    "play": play_fn,
+                    "path": path,
+                }
+            )
+
+    # Optional: pip entry points (silent if nothing installed)
+    try:
+        from importlib.metadata import entry_points
+
+        eps = entry_points()
+        # Python 3.10+ SelectableGroups; 3.12 returns Group
+        group = None
+        if hasattr(eps, "select"):
+            group = eps.select(group="kanji_splash.games")
+        else:
+            group = eps.get("kanji_splash.games", [])  # type: ignore[union-attr]
+        for ep in group or []:
+            try:
+                loaded = ep.load()
+            except Exception:
+                continue
+            meta = loaded if isinstance(loaded, dict) else getattr(
+                loaded, "GARDEN_GAME", None
+            )
+            if not isinstance(meta, dict):
+                continue
+            play_fn = meta.get("play")
+            key = str(meta.get("key") or "").lower()[:1]
+            gid = str(meta.get("id") or ep.name)
+            if not key or not callable(play_fn):
+                continue
+            if key in ("b", "q") or key in seen_keys or gid in seen_ids:
+                continue
+            seen_keys.add(key)
+            seen_ids.add(gid)
+            games.append(
+                {
+                    "id": gid,
+                    "key": key,
+                    "title": str(meta.get("title") or gid),
+                    "title_ja": str(meta.get("title_ja") or ""),
+                    "play": play_fn,
+                    "path": None,
+                }
+            )
+    except Exception:
+        pass
+
+    games.sort(key=lambda g: g["key"])
+    return games
+
+
+def _load_game_module(path: Path):
+    """Import a single game .py by path without polluting package imports."""
+    import importlib.util
+
+    name = f"kanji_splash_game_{path.stem}"
+    try:
+        spec = importlib.util.spec_from_file_location(name, path)
+        if spec is None or spec.loader is None:
+            return None
+        mod = importlib.util.module_from_spec(spec)
+        # dataclasses (and similar) need the module registered before exec
+        sys.modules[name] = mod
+        try:
+            spec.loader.exec_module(mod)
+        except Exception:
+            sys.modules.pop(name, None)
+            raise
+        return mod
+    except Exception:
+        return None
+
+
+# Optional games live in a separate package so kanji-splash stays lean.
+GARDEN_REPO_URL = "https://github.com/zenzenzo/kanji-garden.git"
+GARDEN_REPO_NAME = "kanji-garden"
+
+
+def _print_garden_rabbit_note() -> None:
+    """Empty garden: invite the player to install optional games."""
+    w = min(term_width(), 56)
+    print(C.paint("  A rabbit hops into the path.", C.BRIGHT_WHITE))
+    print(C.paint("  It watches you for a moment,", C.DIM))
+    print(C.paint("  then presses a folded note into your hand.", C.DIM))
+    print()
+    print(C.paint("  It looks like it wants to play a game.", C.BRIGHT_WHITE))
+    print()
+    print(C.paint("  ── the note ──".center(w), C.BOLD, C.BRIGHT_GREEN))
+    print()
+    print(C.paint(f"    git clone {GARDEN_REPO_URL}", C.BRIGHT_CYAN))
+    print(C.paint(f"    cd {GARDEN_REPO_NAME}", C.BRIGHT_CYAN))
+    print(C.paint("    ./install.sh", C.BRIGHT_CYAN))
+    print()
+    print(
+        C.paint(
+            "  Then press (g) again — the garden will not be empty.",
+            C.DIM,
+        )
+    )
+    print()
+    print(
+        C.paint(
+            f"  {GARDEN_REPO_URL.replace('.git', '')}",
+            C.DIM,
+        )
+    )
+    print()
+    print(C.paint("  (b)  back to splash", C.DIM))
+
+
+def run_garden(progress: dict) -> None:
+    """
+    Secret garden lobby — lists only *installed* optional games.
+
+    Unlock is about discovery of the door; games ship separately
+    (kanji-garden). An empty garden shows a rabbit with install instructions.
+    """
+    while True:
+        games = discover_garden_games()
+        by_key = {g["key"]: g for g in games}
+
+        sys.stdout.write(C.CLEAR_SCREEN if C.enabled else "\n")
+        title = "◆  garden  ·  庭  ◆"
+        print()
+        print(C.paint(title.center(min(term_width(), 48)), C.BOLD, C.BRIGHT_GREEN))
+        print(C.paint(("─" * 36).center(min(term_width(), 48)), C.DIM))
+        print()
+
+        if games:
+            for g in games:
+                ja = f"   {g['title_ja']}" if g.get("title_ja") else ""
+                line = f"  ({g['key']})  {g['title']}{ja}"
+                print(C.paint(line, C.BRIGHT_WHITE))
+            print()
+            print(C.paint("  (b)  back to splash", C.DIM))
+            # light stats for known game ids that use progress namespaces
+            stats = progress.get("janken") or {}
+            w = int(stats.get("wins", 0))
+            l = int(stats.get("losses", 0))
+            d = int(stats.get("draws", 0))
+            if any(g["id"] == "janken" for g in games) and (w or l or d):
+                print()
+                print(
+                    C.paint(
+                        f"  janken  {w}–{l}–{d}  (win–loss–draw)",
+                        C.DIM,
+                    )
+                )
+        else:
+            _print_garden_rabbit_note()
+
+        print()
+
+        if not sys.stdin.isatty():
+            return
+        fd = sys.stdin.fileno()
+        old = termios.tcgetattr(fd)
+        raw = "b"
+        try:
+            tty.setcbreak(fd)
+            while True:
+                if _stdin_key_waiting(0.25):
+                    raw = (_read_raw_key() or "b").lower()
+                    break
+        finally:
+            termios.tcsetattr(fd, termios.TCSADRAIN, old)
+
+        if raw in ("b", "q"):
+            return
+        if raw in by_key:
+            game = by_key[raw]
+            try:
+                game["play"](progress)
+            except TypeError:
+                # allow play() with no args
+                game["play"]()
+            save_progress(progress)
+            continue
+        # ignore unknown keys and re-draw
+
+
+def list_entries(entries: list[dict], *, garden_unlocked: bool = False) -> None:
     print(C.paint("Available kanji:", C.BOLD, C.CYAN))
     print(
         C.paint(
@@ -2269,7 +2820,14 @@ def list_entries(entries: list[dict]) -> None:
             C.DIM,
         )
     )
-    print(C.paint(f"  {shortcuts_footer()}", C.DIM))
+    print(
+        C.paint(
+            f"  {shortcuts_footer(garden_unlocked=garden_unlocked)}",
+            C.DIM,
+        )
+    )
+    # Secret garden riddle — three brighter d's hint at (d) daily × 3
+    print(f"  {garden_list_hint()}")
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -2392,9 +2950,14 @@ def main(argv: list[str] | None = None) -> int:
         and os.environ.get("TERM") not in (None, "dumb")
     )
 
+    progress = load_progress()
+    session = new_session()
+
     entries = load_kanji(args.data)
     if args.list and not sys.stdin.isatty():
-        list_entries(entries)
+        list_entries(
+            entries, garden_unlocked=bool(session.get("garden_unlocked"))
+        )
         return 0
 
     if args.query and args.char:
@@ -2433,18 +2996,36 @@ def main(argv: list[str] | None = None) -> int:
 
     # --list from a TTY: show list then enter the key loop
     if args.list and interactive:
-        list_entries(entries)
+        list_entries(
+            entries, garden_unlocked=bool(session.get("garden_unlocked"))
+        )
         print()
         action = KEY_LIST  # fall through to handle like an in-session list
     else:
         action = None
 
     while True:
+        if action == KEY_GARDEN:
+            if session.get("garden_unlocked") or session.get("unlock_played"):
+                session["garden_unlocked"] = True
+                run_garden(progress)
+                mode = "random"
+                action = None
+                continue
+            # Locked: (g) discovers the path — next splash plays the reveal
+            request_garden_unlock(session)
+            mode = "random"
+            action = None
+            continue
+
         if action == KEY_LIST:
             # Already printed, or print now after a keypress mid-session
             if not args.list:
                 print()
-                list_entries(entries)
+                list_entries(
+                    entries,
+                    garden_unlocked=bool(session.get("garden_unlocked")),
+                )
                 print()
             args.list = False
             if not interactive:
@@ -2454,15 +3035,22 @@ def main(argv: list[str] | None = None) -> int:
             old = termios.tcgetattr(fd)
             try:
                 tty.setcbreak(fd)
-                action = wait_for_action()
+                action = wait_for_action(
+                    garden_unlocked=bool(session.get("garden_unlocked"))
+                )
             finally:
                 termios.tcsetattr(fd, termios.TCSADRAIN, old)
             if action == KEY_LIST:
-                list_entries(entries)
+                list_entries(
+                    entries,
+                    garden_unlocked=bool(session.get("garden_unlocked")),
+                )
                 print()
                 continue
             if action == KEY_QUIT:
                 return 0
+            if action == KEY_GARDEN:
+                continue  # handled at top
             if action == KEY_FX:
                 current_effect = next_effect(current_effect)
                 forced_effect = current_effect  # user choice sticks this pick
@@ -2478,6 +3066,7 @@ def main(argv: list[str] | None = None) -> int:
             if action == KEY_NEW:
                 mode = "random"
             elif action == KEY_DAILY:
+                register_daily_press(session)
                 mode = "daily"
             action = None
 
@@ -2523,6 +3112,7 @@ def main(argv: list[str] | None = None) -> int:
                 wait_after=interactive,
                 effect=current_effect,
                 ink_color=current_color,
+                session=session,
             )
             # If user cycled color during the splash, remember it for re-shows
             # of the *same* entry only until n/d picks a new kanji
@@ -2542,15 +3132,32 @@ def main(argv: list[str] | None = None) -> int:
                     noise=0.0,
                     effect_name=current_effect,
                     ink_color=current_color,
+                    garden_unlocked=bool(session.get("garden_unlocked")),
                 )
             )
+            # no-animate path: still honour a pending reveal once text is shown
+            if session.get("unlock_pending") and not session.get(
+                "unlock_played"
+            ):
+                session["garden_unlocked"] = True
+                session["unlock_played"] = True
+                session["unlock_pending"] = False
+                print(
+                    C.paint(
+                        "  ✦  a path opens  ·  (g) garden",
+                        C.BOLD,
+                        C.BRIGHT_GREEN,
+                    )
+                )
             if not interactive:
                 return 0
             fd = sys.stdin.fileno()
             old = termios.tcgetattr(fd)
             try:
                 tty.setcbreak(fd)
-                action = wait_for_action()
+                action = wait_for_action(
+                    garden_unlocked=bool(session.get("garden_unlocked"))
+                )
             finally:
                 termios.tcsetattr(fd, termios.TCSADRAIN, old)
             if action == KEY_COLOR:
@@ -2566,9 +3173,12 @@ def main(argv: list[str] | None = None) -> int:
             mode = "random"
             continue
         if action == KEY_DAILY:
+            register_daily_press(session)
             mode = "daily"
             continue
         if action == KEY_LIST:
+            continue  # handled at top of loop
+        if action == KEY_GARDEN:
             continue  # handled at top of loop
         # q or anything else → exit, leaving the last panel on screen
         return 0

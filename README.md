@@ -93,6 +93,7 @@ kanji-splash --no-animate # static one-shot (scripts)
 | `(d)` | today's daily kanji |
 | `(a)` | cycle animation |
 | `(c)` | cycle ink color |
+| `(g)` | garden *(secret — see below)* |
 | `(q)` | quit |
 
 Footer example:
@@ -101,6 +102,27 @@ Footer example:
 sakura  ·  pastel-red
 (n) new  ·  (l) list  ·  (d) daily  ·  (a) anim  ·  (c) color  ·  (q) quit
 ```
+
+### Secret garden
+
+Two ways to open the path in a session (unlock is **session-only**):
+
+1. Press **`(d)` daily three times** — after the third press, the next splash finishes
+   drawing, then the reveal plays.
+2. Press **`(g)`** while locked — the splash finishes drawing, the reveal plays, and
+   **`(g)`** becomes a normal shortcut. Press **`(g)` again** to enter the garden.
+
+Hint on the list screen (`(l)`):
+
+```text
+day after day after day, I've been searching for the secret garden
+```
+
+(each leading **d** glows a little brighter)
+
+Games live in optional packages (not part of the default splash). See **Optional garden games** below.
+
+Game stats live in `~/.local/share/kanji-splash/progress.json` (or `$XDG_DATA_HOME/...`).
 
 ### Animations (`(a)` or `--effect`)
 
@@ -142,16 +164,68 @@ Abstract entries use random defaults. Live `(a)` / `(c)` overrides apply until t
 | `--list` | Show all kanji and keywords |
 | `--data PATH` | Alternate JSON database |
 
+## Optional garden games
+
+The splash stays small on purpose. **Games are not part of this repo.**
+
+When you open an empty garden, a rabbit offers a note with install instructions
+for the separate package:
+
+**[kanji-garden](https://github.com/zenzenzo/kanji-garden)** — janken, goita, hanafuda month-match, and more later.
+
+### How packaging works
+
+| Layer | What it is |
+|-------|------------|
+| **kanji-splash** (this project) | Start screen + secret garden *door* |
+| **kanji-garden** (optional) | Games behind the door — one install |
+
+The splash only scans:
+
+```text
+~/.local/share/kanji-splash/games/*.py
+```
+
+### Install games
+
+```bash
+git clone https://github.com/zenzenzo/kanji-garden.git
+cd kanji-garden
+./install.sh
+```
+
+Unlock the garden in kanji-splash (`(d)` three times, or `(g)` to open the path),
+press `(g)`, then play with `(j)` / `(o)` / `(h)`.
+
+### Remove
+
+```bash
+rm ~/.local/share/kanji-splash/games/*.py
+# optional: remove the kanji-garden clone
+```
+
+No leftover hooks in the splash — empty garden shows the rabbit note again.
+
+### Why not ship games inside kanji-splash?
+
+So someone who only wants a calm terminal start screen never downloads game
+code or hanafuda art. The door can still be found; the toys are opt-in.
+
 ## Project layout
 
 ```text
-kanji-splash/
-  kanji_splash.py    # main program
-  kanji-new          # wrapper → kanji-splash -m random
-  kanji.json         # database (char, keyword, haiku, color, effect, …)
+kanji-splash/              # core only — clone this for the splash
+  kanji_splash.py
+  kanji-new
+  kanji.json
   requirements.txt
-  LICENSE            # MIT
+  LICENSE
   README.md
+
+# optional, separate repo:
+kanji-garden/              # https://github.com/zenzenzo/kanji-garden
+  install.sh               # → ~/.local/share/kanji-splash/games/
+  janken/ goita/ hanafuda/
 ```
 
 ## Add your own kanji

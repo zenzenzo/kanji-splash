@@ -327,8 +327,12 @@ class C:
     FG_RGB = "\033[38;2;{r};{g};{b}m"
     HIDE_CURSOR = "\033[?25l"
     SHOW_CURSOR = "\033[?25h"
-    # Full clear + home (J alone only clears below the cursor)
+    # Full clear + home — use sparingly (entry/exit); full 2J every frame
+    # flickers on Ghostty, Guake, and some other emulators.
     CLEAR_SCREEN = "\033[2J\033[H"
+    HOME = "\033[H"
+    ERASE_LINE = "\033[K"       # cursor → end of line
+    CLEAR_BELOW = "\033[J"      # cursor → end of screen
     # Alternate buffer: animation frames never pile up in scrollback
     ALT_SCREEN_ON = "\033[?1049h"
     ALT_SCREEN_OFF = "\033[?1049l"
@@ -2182,8 +2186,21 @@ def animate_display(
     action: str | None = None  # None until the user presses a session key
 
     def draw(panel: str) -> None:
-        sys.stdout.write(C.CLEAR_SCREEN)
-        sys.stdout.write(panel)
+        """
+        Redraw without a full-screen erase flash.
+
+        Move home, rewrite each line (erase to EOL so shorter lines don't
+        leave trails), then clear anything below the panel. Terminals that
+        flicker on CSI 2J every frame (Ghostty, Guake, …) stay steady.
+        """
+        sys.stdout.write(C.HOME)
+        lines = panel.split("\n")
+        for i, line in enumerate(lines):
+            sys.stdout.write(line)
+            sys.stdout.write(C.ERASE_LINE)
+            if i < len(lines) - 1:
+                sys.stdout.write("\n")
+        sys.stdout.write(C.CLEAR_BELOW)
         sys.stdout.flush()
 
     def still_panel(*, status: str | None = None) -> str:
